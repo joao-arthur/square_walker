@@ -4,6 +4,13 @@ export function App() {
     const [height, setHeight] = useState(window.innerHeight);
     const canvasRef = useRef(null);
 
+    const boardModel = new Array(100)
+        .fill(undefined)
+        .map(() =>
+            new Array(100).fill(undefined).map(() => Math.round(Math.random()))
+        );
+    const size = 5;
+
     function onHeightChange() {
         setHeight(window.innerHeight);
     }
@@ -16,20 +23,23 @@ export function App() {
     useEffect(() => {
         const context = canvasRef.current.getContext('2d');
 
-        context.fillStyle = '#000000';
-        context.fillRect(
-            0,
-            0,
-            context.canvas.width / 2,
-            context.canvas.height / 2
-        );
-        context.fillStyle = '#333333';
-        context.fillRect(
-            context.canvas.width / 2,
-            context.canvas.height / 2,
-            context.canvas.width,
-            context.canvas.height
-        );
+        for (let i = 0; i < boardModel.length; i++) {
+            const column = boardModel[i];
+            for (let j = 0; j < column.length; j++) {
+                const line = column[j];
+                if (!!line) {
+                    context.fillStyle = '#000000';
+                } else {
+                    context.fillStyle = '#333333';
+                }
+                context.fillRect(
+                    i * size,
+                    j * size,
+                    i * size + size,
+                    j * size + size
+                );
+            }
+        }
     });
 
     return (
