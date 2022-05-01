@@ -1,32 +1,30 @@
-import { StrictMode, useEffect, useRef, useState } from 'react';
-import { initCanvasPaint } from './canvas';
+import { StrictMode, useEffect, useRef } from 'react';
+import { initCanvasPaint, updateCanvasDimensions } from './canvas';
+import { useWindowDimensions } from './useWindowDimensions';
 
 export function App() {
-    const [height, setHeight] = useState(window.innerHeight);
+    const dimensions = useWindowDimensions();
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
-    function onHeightChange() {
-        setHeight(window.innerHeight);
-    }
-
     useEffect(() => {
-        window.addEventListener('resize', onHeightChange);
-        return () => window.removeEventListener('resize', onHeightChange);
-    }, []);
+        updateCanvasDimensions(dimensions);
+    }, [dimensions]);
 
     useEffect(() => {
         if (!canvasRef.current) return;
         const context = canvasRef.current.getContext('2d');
         if (!context) return;
-        initCanvasPaint(context);
+        initCanvasPaint(context, dimensions);
     }, []);
 
     return (
         <StrictMode>
             <canvas
+                width={dimensions.width}
+                height={dimensions.height}
                 style={{
-                    width: '100vw',
-                    height
+                    width: dimensions.width,
+                    height: dimensions.height
                 }}
                 ref={canvasRef}
             />
