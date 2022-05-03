@@ -1,4 +1,4 @@
-import { range } from '../../range';
+import { range } from '../../core/numberFns/range';
 import { scenarioParts } from '../scenarioParts';
 import { dimensions } from './dimensions';
 import { dimensionsAreValid } from './dimensionsAreValid';
