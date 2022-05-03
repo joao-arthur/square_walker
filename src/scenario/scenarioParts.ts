@@ -1,4 +1,4 @@
 export enum scenarioParts {
     TERRAIN = 'TERRAIN',
-    WATER = 'WATER'
+    WATER = 'WATER',
 }

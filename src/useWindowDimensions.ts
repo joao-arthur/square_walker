@@ -17,7 +17,7 @@ export function useWindowDimensions() {
 
     const dimensions: dimensions = {
         width,
-        height
+        height,
     };
 
     return dimensions;

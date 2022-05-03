@@ -24,7 +24,7 @@ export function App() {
                 height={dimensions.height}
                 style={{
                     width: dimensions.width,
-                    height: dimensions.height
+                    height: dimensions.height,
                 }}
                 ref={canvasRef}
             />
