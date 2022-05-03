@@ -3,31 +3,84 @@ import { scenarioParts } from '../scenarioParts';
 
 describe('scenarioModel', () => {
     it('should generate model', () => {
-        expect(scenarioModel.getModel()).toEqual([
+        expect(scenarioModel.getModel({ width: 4, height: 4 })).toEqual([
             [
                 scenarioParts.TERRAIN,
                 scenarioParts.TERRAIN,
                 scenarioParts.TERRAIN,
-                scenarioParts.TERRAIN
+                scenarioParts.TERRAIN,
             ],
             [
                 scenarioParts.TERRAIN,
                 scenarioParts.TERRAIN,
                 scenarioParts.TERRAIN,
-                scenarioParts.TERRAIN
+                scenarioParts.TERRAIN,
             ],
             [
                 scenarioParts.TERRAIN,
                 scenarioParts.TERRAIN,
                 scenarioParts.TERRAIN,
-                scenarioParts.TERRAIN
+                scenarioParts.TERRAIN,
             ],
             [
                 scenarioParts.TERRAIN,
                 scenarioParts.TERRAIN,
                 scenarioParts.TERRAIN,
-                scenarioParts.TERRAIN
-            ]
+                scenarioParts.TERRAIN,
+            ],
+        ]);
+
+        expect(scenarioModel.getModel({ width: 10, height: 3 })).toEqual([
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
         ]);
     });
 });
