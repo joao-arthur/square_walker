@@ -4,6 +4,5 @@ you walk, in squares
 
 ## Run it
 
- > pnpm install
- 
- > pnpm dev
+> -   pnpm install
+> -   pnpm dev
