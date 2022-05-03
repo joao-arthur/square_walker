@@ -1,7 +1,7 @@
 import { range } from '../../core/numberFns/range';
 import { scenarioParts } from '../scenarioParts';
 import { dimensions } from './dimensions';
-import { dimensionsAreValid } from './dimensionsAreValid';
+import { dimensionsAreValid } from '../scenarioDimensions/dimensionsAreValid';
 
 function getModel(dimensions: dimensions) {
     if (!dimensionsAreValid(dimensions)) throw Error('Invalid dimensions');

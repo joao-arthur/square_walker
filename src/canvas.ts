@@ -14,7 +14,7 @@ let drawPosition = boardHeightUnits - 16;
 
 export function initCanvasPaint(
     context: CanvasRenderingContext2D,
-    dimensions: dimensions
+    dimensions: dimensions,
 ) {
     createModel();
     width = dimensions.width;
@@ -83,7 +83,7 @@ function renderModel(context: CanvasRenderingContext2D) {
                 columnIndex * unitwidth,
                 lineIndex * unitHeight,
                 unitwidth,
-                height //  unitHeight
+                height, //  unitHeight
             );
         });
     });
