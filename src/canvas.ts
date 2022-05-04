@@ -1,5 +1,5 @@
 import { produce } from 'immer';
-import { dimensions } from './types';
+import { dimensionsType } from './types';
 
 let width: number;
 let height: number;
@@ -12,52 +12,31 @@ let boardModel: number[][];
 
 let drawPosition = boardHeightUnits - 16;
 
-export function initCanvasPaint(
-    context: CanvasRenderingContext2D,
-    dimensions: dimensions,
-) {
-    createModel();
-    width = dimensions.width;
-    height = dimensions.height;
-    initModel(context);
-    window.setInterval(() => mainLoop(context), updateInterval);
-}
-
-export function updateCanvasDimensions(dimensions: dimensions) {
-    width = dimensions.width;
-    height = dimensions.height;
+function createColumn() {
+    return Array(boardHeightUnits).fill(undefined);
 }
 
 function createModel() {
     boardModel = Array(boardWidthUnits).fill(undefined).map(createColumn);
 }
 
-function createColumn() {
-    return Array(boardHeightUnits).fill(undefined);
-}
-
-function mainLoop(context: CanvasRenderingContext2D) {
-    updateModel(context);
-    renderModel(context);
-}
-
 function updateDrawPosition() {
     const changeNumber = Math.random();
     if (changeNumber < 0.133) {
-        if (drawPosition > 0) drawPosition--;
+        if (drawPosition > 0) drawPosition -= 1;
     } else if (changeNumber > 0.866) {
-        if (drawPosition < boardHeightUnits) drawPosition++;
+        if (drawPosition < boardHeightUnits) drawPosition += 1;
     }
 }
 
-function initModel(context: CanvasRenderingContext2D) {
+function initModel() {
     boardModel.forEach(column => {
         column[drawPosition] = 1;
         updateDrawPosition();
     });
 }
 
-function updateModel(context: CanvasRenderingContext2D) {
+function updateModel() {
     boardModel = produce(boardModel, draft => {
         draft.shift();
         updateDrawPosition();
@@ -87,4 +66,25 @@ function renderModel(context: CanvasRenderingContext2D) {
             );
         });
     });
+}
+
+function mainLoop(context: CanvasRenderingContext2D) {
+    updateModel();
+    renderModel(context);
+}
+
+export function initCanvasPaint(
+    context: CanvasRenderingContext2D,
+    dimensions: dimensionsType,
+) {
+    createModel();
+    width = dimensions.width;
+    height = dimensions.height;
+    initModel();
+    window.setInterval(() => mainLoop(context), updateInterval);
+}
+
+export function updateCanvasDimensions(dimensions: dimensionsType) {
+    width = dimensions.width;
+    height = dimensions.height;
 }

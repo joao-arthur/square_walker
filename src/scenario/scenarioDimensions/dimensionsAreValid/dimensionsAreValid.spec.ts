@@ -1,36 +1,38 @@
-import {
-    dimensionsAreValid,
-    MIN_HEIGHT,
-    MIN_WIDTH,
-} from './dimensionsAreValid';
+import { dimensionsAreValid, minHeight, minWidth } from './dimensionsAreValid';
 
 describe('dimensionsAreValid', () => {
     it('should verify if dimensions are valid', () => {
         expect(
             dimensionsAreValid({
-                width: MIN_WIDTH - 1,
-                height: MIN_HEIGHT - 1,
+                width: minWidth - 1,
+                height: minHeight - 1,
             }),
         ).toBe(false);
+
         expect(
-            dimensionsAreValid({ width: MIN_WIDTH - 1, height: MIN_HEIGHT }),
+            dimensionsAreValid({ width: minWidth - 1, height: minHeight }),
         ).toBe(false);
+
         expect(
-            dimensionsAreValid({ width: MIN_WIDTH, height: MIN_HEIGHT - 1 }),
+            dimensionsAreValid({ width: minWidth, height: minHeight - 1 }),
         ).toBe(false);
+
+        expect(dimensionsAreValid({ width: minWidth, height: minHeight })).toBe(
+            true,
+        );
+
         expect(
-            dimensionsAreValid({ width: MIN_WIDTH, height: MIN_HEIGHT }),
+            dimensionsAreValid({ width: minWidth + 1, height: minHeight }),
         ).toBe(true);
+
         expect(
-            dimensionsAreValid({ width: MIN_WIDTH + 1, height: MIN_HEIGHT }),
+            dimensionsAreValid({ width: minWidth, height: minHeight + 1 }),
         ).toBe(true);
-        expect(
-            dimensionsAreValid({ width: MIN_WIDTH, height: MIN_HEIGHT + 1 }),
-        ).toBe(true);
+
         expect(
             dimensionsAreValid({
-                width: MIN_WIDTH + 1,
-                height: MIN_HEIGHT + 1,
+                width: minWidth + 1,
+                height: minHeight + 1,
             }),
         ).toBe(true);
     });
