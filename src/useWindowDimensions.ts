@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { dimensionsType } from './types';
+import { dimensionsType } from './dimensions/dimensionsType';
 
 export function useWindowDimensions() {
     const [width, setWidth] = useState(window.innerWidth);

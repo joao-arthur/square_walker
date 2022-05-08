@@ -1,5 +1,5 @@
 import { produce } from 'immer';
-import { dimensionsType } from './types';
+import { dimensionsType } from './dimensions/dimensionsType';
 
 let width: number;
 let height: number;

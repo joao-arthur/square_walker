@@ -3,7 +3,13 @@ import { scenarioParts } from '../scenarioParts';
 
 describe('scenarioModel', () => {
     it('should generate model', () => {
-        expect(scenarioModel.getModel({ width: 4, height: 4 })).toEqual([
+        expect(scenarioModel.getModel({ width: 5, height: 4 })).toEqual([
+            [
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+                scenarioParts.TERRAIN,
+            ],
             [
                 scenarioParts.TERRAIN,
                 scenarioParts.TERRAIN,

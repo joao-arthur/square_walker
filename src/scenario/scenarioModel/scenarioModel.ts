@@ -1,6 +1,6 @@
 import { range } from '../../core/numberFns/range';
 import { scenarioParts } from '../scenarioParts';
-import { dimensionsType } from './dimensions';
+import { dimensionsType } from '../../dimensions/dimensionsType';
 import { dimensionsAreValid } from '../scenarioDimensions/dimensionsAreValid';
 
 function getModel(dimensions: dimensionsType) {

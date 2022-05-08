@@ -45,5 +45,10 @@ module.exports = {
         ],
         '@typescript-eslint/indent': ['error', 4],
         'arrow-parens': ['error', 'as-needed'],
+        'operator-linebreak': [
+            'error',
+            'after',
+            { overrides: { '?': 'before', ':': 'before' } },
+        ],
     },
 };
