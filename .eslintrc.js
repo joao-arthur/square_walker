@@ -50,5 +50,6 @@ module.exports = {
             'after',
             { overrides: { '?': 'before', ':': 'before' } },
         ],
+        'no-implicit-globals': 'error',
     },
 };

@@ -4,13 +4,15 @@ import { dimensionsType } from './dimensions/dimensionsType';
 let width: number;
 let height: number;
 
-const updateInterval = 200;
+const updateInterval = 10;
 
 const boardWidthUnits = 128;
 const boardHeightUnits = 64;
 let boardModel: number[][];
 
 let drawPosition = boardHeightUnits - 16;
+
+let timeoutId = 0;
 
 function createColumn() {
     return Array(boardHeightUnits).fill(undefined);
@@ -81,10 +83,14 @@ export function initCanvasPaint(
     width = dimensions.width;
     height = dimensions.height;
     initModel();
-    window.setInterval(() => mainLoop(context), updateInterval);
+    timeoutId = window.setInterval(() => mainLoop(context), updateInterval);
 }
 
 export function updateCanvasDimensions(dimensions: dimensionsType) {
     width = dimensions.width;
     height = dimensions.height;
+}
+
+export function destroyCanvasPaint() {
+    window.clearTimeout(timeoutId);
 }

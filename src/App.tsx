@@ -1,6 +1,10 @@
 import { StrictMode, useEffect, useRef } from 'react';
-import { useDidMount } from 'rooks';
-import { initCanvasPaint, updateCanvasDimensions } from './canvas';
+import { useDidMount, useWillUnmount } from 'rooks';
+import {
+    destroyCanvasPaint,
+    initCanvasPaint,
+    updateCanvasDimensions,
+} from './canvas';
 import { useWindowDimensions } from './useWindowDimensions';
 
 export function App() {
@@ -16,6 +20,10 @@ export function App() {
         const context = canvasRef.current.getContext('2d');
         if (!context) return;
         initCanvasPaint(context, dimensions);
+    });
+
+    useWillUnmount(() => {
+        destroyCanvasPaint();
     });
 
     return (
