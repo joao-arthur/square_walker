@@ -1,8 +1,7 @@
 import { produce } from 'immer';
 import { dimensionsType } from './dimensions/dimensionsType';
 
-let width: number;
-let height: number;
+let dimensions: dimensionsType;
 
 const updateInterval = 10;
 
@@ -50,21 +49,20 @@ function updateModel() {
 
 function renderModel(context: CanvasRenderingContext2D) {
     context.fillStyle = '#000000';
-    context.fillRect(0, 0, width, height);
+    context.fillRect(0, 0, dimensions.width, dimensions.height);
 
-    const unitwidth = width / boardWidthUnits;
-    const unitHeight = height / boardHeightUnits;
+    const unitwidth = dimensions.width / boardWidthUnits;
+    const unitHeight = dimensions.height / boardHeightUnits;
 
     context.fillStyle = '#555555';
     boardModel.forEach((column, columnIndex) => {
         column.forEach((line, lineIndex) => {
             if (line !== 1) return;
-
             context.fillRect(
                 columnIndex * unitwidth,
                 lineIndex * unitHeight,
                 unitwidth,
-                height, //  unitHeight
+                dimensions.height, //  unitHeight
             );
         });
     });
@@ -77,18 +75,16 @@ function mainLoop(context: CanvasRenderingContext2D) {
 
 export function initCanvasPaint(
     context: CanvasRenderingContext2D,
-    dimensions: dimensionsType,
+    newDimensions: dimensionsType,
 ) {
     createModel();
-    width = dimensions.width;
-    height = dimensions.height;
+    dimensions = produce(dimensions, () => newDimensions);
     initModel();
     timeoutId = window.setInterval(() => mainLoop(context), updateInterval);
 }
 
-export function updateCanvasDimensions(dimensions: dimensionsType) {
-    width = dimensions.width;
-    height = dimensions.height;
+export function updateCanvasDimensions(newDimensions: dimensionsType) {
+    dimensions = produce(dimensions, () => newDimensions);
 }
 
 export function destroyCanvasPaint() {

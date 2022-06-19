@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { dimensionsType } from './dimensions/dimensionsType';
 
-export function useWindowDimensions() {
+export function useWindowDimensions(): dimensionsType {
     const [width, setWidth] = useState(window.innerWidth);
     const [height, setHeight] = useState(window.innerHeight);
 
@@ -15,10 +15,8 @@ export function useWindowDimensions() {
         return () => window.removeEventListener('resize', onWindowResize);
     }, []);
 
-    const dimensions: dimensionsType = {
+    return {
         width,
         height,
     };
-
-    return dimensions;
 }
