@@ -62,7 +62,7 @@ function renderModel(context: CanvasRenderingContext2D) {
                 columnIndex * unitwidth,
                 lineIndex * unitHeight,
                 unitwidth,
-                dimensions.height, //  unitHeight
+                unitHeight,
             );
         });
     });
@@ -88,5 +88,5 @@ export function updateCanvasDimensions(newDimensions: dimensionsType) {
 }
 
 export function destroyCanvasPaint() {
-    window.clearTimeout(timeoutId);
+    window.clearInterval(timeoutId);
 }

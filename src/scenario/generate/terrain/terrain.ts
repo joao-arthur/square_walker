@@ -1,3 +1,3 @@
-export function terrain() {
+export function terrain(boardModel: number[][]): number[][] {
     return undefined;
 }
