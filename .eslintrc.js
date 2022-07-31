@@ -2,7 +2,6 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
-        jest: true,
     },
     extends: [
         'eslint:recommended',
@@ -51,5 +50,6 @@ module.exports = {
             { overrides: { '?': 'before', ':': 'before' } },
         ],
         'no-implicit-globals': 'error',
+        'default-case': 'off',
     },
 };

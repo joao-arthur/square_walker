@@ -1,1 +1,1 @@
-export * from './fit';
+export { fit } from './fit';

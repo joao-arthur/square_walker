@@ -1,24 +1,37 @@
 import { produce } from 'immer';
 import { dimensionsType } from './dimensions/dimensionsType';
+import { scenarioParts } from './scenario/scenarioParts';
 
 let dimensions: dimensionsType;
 
-const updateInterval = 10;
+const updateInterval = 500;
 
-const boardWidthUnits = 128;
+const boardWidthUnits = 64;
 const boardHeightUnits = 64;
+
 let boardModel: number[][];
 
 let drawPosition = boardHeightUnits - 16;
 
 let timeoutId = 0;
 
-function createColumn() {
-    return Array(boardHeightUnits).fill(undefined);
+function getColor(value: scenarioParts) {
+    switch (value) {
+        case scenarioParts.BACKGROUND:
+            return '#000000';
+        case scenarioParts.TERRAIN:
+            return '#555555';
+        case scenarioParts.WATER:
+            return '#5555aa';
+    }
 }
 
-function createModel() {
-    boardModel = Array(boardWidthUnits).fill(undefined).map(createColumn);
+function createLine(): number[] {
+    return Array(boardWidthUnits).fill(undefined);
+}
+
+function createColumn(): number[] {
+    return Array(boardHeightUnits).fill(undefined);
 }
 
 function updateDrawPosition() {
@@ -30,34 +43,31 @@ function updateDrawPosition() {
     }
 }
 
-function initModel() {
+function updateColumns() {
     boardModel.forEach(column => {
         column[drawPosition] = 1;
         updateDrawPosition();
     });
 }
 
-function updateModel() {
+function updateColumnsModel() {
     boardModel = produce(boardModel, draft => {
         draft.shift();
-        updateDrawPosition();
         const newColumn = createColumn();
         newColumn[drawPosition] = 1;
+        updateDrawPosition();
         draft.push(newColumn);
     });
 }
 
 function renderModel(context: CanvasRenderingContext2D) {
-    context.fillStyle = '#000000';
-    context.fillRect(0, 0, dimensions.width, dimensions.height);
-
     const unitwidth = dimensions.width / boardWidthUnits;
     const unitHeight = dimensions.height / boardHeightUnits;
 
-    context.fillStyle = '#555555';
     boardModel.forEach((column, columnIndex) => {
         column.forEach((line, lineIndex) => {
-            if (line !== 1) return;
+            context.fillStyle = getColor(line);
+
             context.fillRect(
                 columnIndex * unitwidth,
                 lineIndex * unitHeight,
@@ -68,8 +78,12 @@ function renderModel(context: CanvasRenderingContext2D) {
     });
 }
 
+function createModel() {
+    boardModel = produce(boardModel, () => createLine().map(createColumn));
+}
+
 function mainLoop(context: CanvasRenderingContext2D) {
-    updateModel();
+    updateColumnsModel();
     renderModel(context);
 }
 
@@ -79,7 +93,7 @@ export function initCanvasPaint(
 ) {
     createModel();
     dimensions = produce(dimensions, () => newDimensions);
-    initModel();
+    updateColumns();
     timeoutId = window.setInterval(() => mainLoop(context), updateInterval);
 }
 

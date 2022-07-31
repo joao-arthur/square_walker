@@ -1,1 +1,1 @@
-export * from './water';
+export { water } from './water';

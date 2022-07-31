@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { dimensionsAreValid, minHeight, minWidth } from './dimensionsAreValid';
 
 describe('dimensionsAreValid', () => {

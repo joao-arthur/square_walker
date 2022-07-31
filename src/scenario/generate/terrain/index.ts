@@ -1,1 +1,1 @@
-export * from './terrain';
+export { terrain } from './terrain';

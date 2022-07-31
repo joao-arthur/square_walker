@@ -1,1 +1,1 @@
-export * from './scenarioModel';
+export { scenarioModel } from './scenarioModel';

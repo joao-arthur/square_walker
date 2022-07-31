@@ -1,1 +1,1 @@
-export * from './dimensionsAreValid';
+export { dimensionsAreValid } from './dimensionsAreValid';
