@@ -1,3 +1,20 @@
+import { produce } from 'immer';
+
 export function terrain(model) {
-    for(const )    
+    return produce(model, draft => {
+
+
+        for (const column of model) {
+
+        }
+
+
+
+    });
+
+
+}
+
+function getStartPoint() {
+
 }
