@@ -51,5 +51,8 @@ module.exports = {
         ],
         'no-implicit-globals': 'error',
         'default-case': 'off',
+        'no-restricted-syntax': 'off',
+        curly: ['error', 'multi'],
+        'nonblock-statement-body-position': ['error', 'below']
     },
 };
