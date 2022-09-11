@@ -16,9 +16,11 @@ export function App() {
     }, [dimensions]);
 
     useDidMount(() => {
-        if (!canvasRef.current) return;
+        if (!canvasRef.current)
+            return;
         const context = canvasRef.current.getContext('2d');
-        if (!context) return;
+        if (!context)
+            return;
         initCanvasPaint(context, dimensions);
     });
 

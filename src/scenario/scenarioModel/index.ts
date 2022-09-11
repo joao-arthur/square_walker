@@ -1,1 +1,0 @@
-export { scenarioModel } from './scenarioModel';

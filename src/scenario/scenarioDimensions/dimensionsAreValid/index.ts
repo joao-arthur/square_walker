@@ -1,1 +1,0 @@
-export { dimensionsAreValid } from './dimensionsAreValid';
