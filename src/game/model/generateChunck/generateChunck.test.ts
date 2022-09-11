@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { generate } from './generate';
+import { generateChunck } from './generateChunck';
 
-describe('generate', () => {
+describe('generateChunck', () => {
     it('should execute the passed functions to generate a chunck ', () => {
         expect(
-            generate([
+            generateChunck([
                 () => [['EMPTY', 'EMPTY', 'EMPTY']],
                 current => current.concat([['SOLID_SAND', 'SOLID_DIRT', 'SOLID_GRASS']]),
                 current => current.concat([['SOLID_STONE', 'SOLID_STONE', 'SOLID_STONE']]),
