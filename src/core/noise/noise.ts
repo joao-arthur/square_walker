@@ -1,10 +1,10 @@
 import alea from 'alea';
 import { createNoise2D } from 'simplex-noise';
 
-const prng = alea('seed');
+const seedFunction = alea('seed');
 
 export function noise() {
-    const noise2D = createNoise2D(prng);
+    const noise2D = createNoise2D(seedFunction);
 
     return Array(100)
         .fill(undefined)
