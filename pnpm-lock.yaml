@@ -8,6 +8,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.31.0
   '@vitejs/plugin-react': ^2.0.0
   alea: ^1.0.1
+  bezier-js: ^6.1.0
   c8: ^7.12.0
   eslint: ^8.20.0
   eslint-config-airbnb: ^19.0.4
@@ -28,6 +29,7 @@ specifiers:
 
 dependencies:
   alea: 1.0.1
+  bezier-js: 6.1.0
   immer: 9.0.15
   ramda: 0.28.0
   react: 18.2.0
@@ -744,6 +746,10 @@ packages:
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
+
+  /bezier-js/6.1.0:
+    resolution: {integrity: sha512-oc8fkHqG0R+dQuNiXVbPMB0cc8iDqkLAjbA2gq26QmV8tZqW9GGI7iNEX1ioRWlZperQS7v5BX03+9FLVWZbSw==}
+    dev: false
 
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
