@@ -15,6 +15,7 @@
         "defaults"
     ],
     "dependencies": {
+        "@types/bezier-js": "^4.1.0",
         "alea": "^1.0.1",
         "bezier-js": "^6.1.0",
         "immer": "^9.0.15",
