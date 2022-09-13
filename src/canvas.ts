@@ -4,20 +4,27 @@ export function initCanvasPaint(
     context: CanvasRenderingContext2D,
     dimensions: any,
 ) {
-    const unitwidth = dimensions.width / 64;
-    const unitHeight = dimensions.height / 64;
+    const unitwidth = 10;
+    const unitHeight = 10;
 
-    gameController().forEach((line, columnIndex) => {
-        line.forEach((column, lineIndex) => {
+    gameController().forEach((line, lineIndex) => {
+        line.forEach((column, columnIndex) => {
             switch (column) {
-                case 'EMPTY': context.fillStyle = '#000000'; break;
-                case 'SOLID_STONE': context.fillStyle = '#555555'; break;
+                case 'EMPTY':
+                    context.fillStyle = '#000000';
+                    break;
+                case 'SOLID_STONE':
+                    context.fillStyle = '#555555';
+                    break;
                 default: context.fillStyle = '#5555aa';
             }
 
+            const x = lineIndex * unitwidth;
+            const y = columnIndex * unitHeight;
+
             context.fillRect(
-                columnIndex * unitwidth,
-                lineIndex * unitHeight,
+                y,
+                x,
                 unitwidth,
                 unitHeight,
             );
