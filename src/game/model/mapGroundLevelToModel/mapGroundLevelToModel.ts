@@ -3,8 +3,12 @@ import { modelType } from '../model';
 
 export function mapGroundLevelToModel(model: modelType, groundLevel: number[]) {
     return produce(model, draft => {
-        for (let i = 0; i < 100; i++)
-            for (let j = groundLevel[i] - 1; j < 100; j++)
-                draft[j][i] = 'SOLID_STONE';
+        for (let row = 0; row < model.length; row++)
+            for (let column = 0; column < model[row].length; column++)
+
+                if (row >= groundLevel[column])
+                    draft[row][column] = 'SOLID_STONE';
+
+        //       console.log(draft[column]);
     });
 }

@@ -11,9 +11,9 @@ describe('mapGroundLevelToModel', () => {
             ],
             [0, 1, 2],
         )).toEqual([
-            ['TERRAIN', 'EMPTY', 'EMPTY'],
-            ['TERRAIN', 'TERRAIN', 'EMPTY'],
-            ['TERRAIN', 'TERRAIN', 'TERRAIN'],
+            ['SOLID_STONE', 'EMPTY', 'EMPTY'],
+            ['SOLID_STONE', 'SOLID_STONE', 'EMPTY'],
+            ['SOLID_STONE', 'SOLID_STONE', 'SOLID_STONE'],
         ]);
     });
 });

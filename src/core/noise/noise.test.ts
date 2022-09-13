@@ -1,6 +1,9 @@
-import { describe } from 'vitest';
-import { noise } from './noise';
+import { describe, expect, it } from 'vitest';
+// import { noise } from './noise';
 
 describe('noise', () => {
-    console.log(noise());
+    it('should work', () => {
+        expect(1 + 1).toBe(2);
+    });
+    //  console.log(noise());
 });
