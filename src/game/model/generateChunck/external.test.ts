@@ -3,6 +3,6 @@ import { externalMapping } from './external';
 
 describe('externalMapping', () => {
     it('should work', () => {
-        console.log(externalMapping());
+        //   console.log(externalMapping());
     });
 });
