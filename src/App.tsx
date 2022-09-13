@@ -17,6 +17,7 @@ export function App() {
         if (!context)
             return;
         initCanvasPaint(context, dimensions);
+        window.addEventListener('keypress', console.log);
     });
 
     return (
