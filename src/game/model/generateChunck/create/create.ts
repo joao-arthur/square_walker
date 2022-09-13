@@ -1,5 +1,5 @@
-import { model } from '../../model';
+import { modelType } from '../../model';
 
-export function create(_: model): model {
+export function create(_: modelType): modelType {
     return Array(100).fill(Array(100).fill('EMPTY'));
 }

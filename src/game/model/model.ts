@@ -1,3 +1,3 @@
-import { block } from './block';
+import { blockType } from './block';
 
-export type model = block[][];
+export type modelType = blockType[][];

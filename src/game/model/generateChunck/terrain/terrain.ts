@@ -1,8 +1,8 @@
 import { produce } from 'immer';
-import { model } from '../../model';
+import { modelType } from '../../model';
 import { groundLevel } from './groundLevel/groundLevel';
 
-export function terrain(currentModel: model) {
+export function terrain(currentModel: modelType) {
     return produce(currentModel, draft => {
         const modelGroundLevel = groundLevel({
             numberOfColumns: 100,

@@ -1,4 +1,4 @@
-export type block =
+export type blockType =
   | 'EMPTY'
   | 'WATER_SHALLOW'
   | 'WATER_DEEP'
