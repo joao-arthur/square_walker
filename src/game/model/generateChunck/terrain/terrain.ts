@@ -1,8 +1,9 @@
+import { chunckType } from '../../chunck';
 import { mapGroundLevelToModel } from '../../mapGroundLevelToModel/mapGroundLevelToModel';
-import { modelType } from '../../model';
+
 import { groundLevel } from './groundLevel/groundLevel';
 
-export function terrain(model: modelType) {
+export function terrain(previous: chunckType): chunckType {
     const modelGroundLevel = groundLevel({
         numberOfColumns: 100,
         minHeight: 20,
@@ -10,5 +11,5 @@ export function terrain(model: modelType) {
         initialHeight: 50,
     });
 
-    return mapGroundLevelToModel(model, modelGroundLevel);
+    return mapGroundLevelToModel(previous, modelGroundLevel);
 }

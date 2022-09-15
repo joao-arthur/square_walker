@@ -1,4 +1,4 @@
-import { pipe } from 'ramda';
+import { numberFns } from '../../../../../core/numberFns';
 
 type params = {
     readonly numberOfColumns: number;
@@ -7,32 +7,12 @@ type params = {
     readonly initialHeight: number;
 };
 
-type newHeightParams = {
-    readonly currentHeight: number;
-    readonly delta: number
-    readonly minHeight: number;
-    readonly maxHeight: number;
-};
-
-function getNewHeight({
-    currentHeight,
-    delta,
-    minHeight,
-    maxHeight,
-}: newHeightParams): number {
-    return pipe(
-        newHeight => Math.min(newHeight, maxHeight),
-        newHeight => Math.max(newHeight, minHeight),
-    )(currentHeight + delta);
-}
-
 export function groundLevel({
     numberOfColumns,
     minHeight,
     maxHeight,
     initialHeight,
 }: params): number[] {
-    let currentHeight = initialHeight;
     return Array(numberOfColumns)
         .fill(undefined)
         .map(() => {
@@ -44,13 +24,10 @@ export function groundLevel({
                 delta = 0;
             else
                 delta = -1;
-
-            currentHeight = getNewHeight({
-                currentHeight,
-                delta,
-                minHeight,
-                maxHeight,
+            return numberFns.between({
+                value: initialHeight + delta,
+                min: minHeight,
+                max: maxHeight,
             });
-            return currentHeight;
         });
 }

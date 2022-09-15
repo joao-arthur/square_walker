@@ -1,3 +1,3 @@
-import type { modelType } from '../model';
+import { chunckType } from '../chunck';
 
-export type generateChunckFn = (previousModel: modelType) => modelType;
+export type generateChunckFn = (previous: chunckType) => chunckType;

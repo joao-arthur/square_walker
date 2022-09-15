@@ -1,3 +1,3 @@
-import { blockType } from './block';
+import { chunckType } from './chunck';
 
-export type modelType = blockType[][];
+export type modelType = chunckType[];

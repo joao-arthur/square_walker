@@ -1,5 +1,6 @@
-export class Camera {
-    private x;
-
-    private y;
-}
+export type cameraType = {
+    readonly x: number;
+    readonly y:number;
+    readonly height: number;
+    readonly width: number;
+};
