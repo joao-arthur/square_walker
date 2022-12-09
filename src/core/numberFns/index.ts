@@ -1,1 +1,0 @@
-export { numberFns } from './numberFns';

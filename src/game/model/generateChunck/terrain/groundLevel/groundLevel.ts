@@ -1,4 +1,4 @@
-import { numberFns } from '../../../../../core/numberFns';
+import { numbers } from 'funis';
 
 type params = {
     readonly numberOfColumns: number;
@@ -24,8 +24,7 @@ export function groundLevel({
                 delta = 0;
             else
                 delta = -1;
-            return numberFns.between({
-                value: initialHeight + delta,
+            return numbers.clamp(initialHeight + delta, {
                 min: minHeight,
                 max: maxHeight,
             });
