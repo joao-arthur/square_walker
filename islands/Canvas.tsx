@@ -1,5 +1,5 @@
 import { useWindowDimensions } from "../components/useWindowDimensions.ts";
-import { initCanvasPaint } from "../components/canvas.ts";
+import { initCanvasPaint } from "../components/initCanvasPaint.ts";
 import { useEffect, useRef } from "preact/hooks";
 
 export default function Canvas() {
