@@ -2,7 +2,7 @@
 
 A 2d random generated scenario in blocks.
 
-## TO DO
+## TODO
 
 ### Scenario
 
@@ -22,6 +22,5 @@ A 2d random generated scenario in blocks.
 ## Run it
 
 ```
-pnpm install
-pnpm dev
+deno task start
 ```
