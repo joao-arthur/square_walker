@@ -1,1 +1,3 @@
-export type modelType = readonly (readonly string[])[];
+import { blocks } from '../features/blocks/blocks.ts';
+
+export type modelType = readonly (readonly blocks[])[];
