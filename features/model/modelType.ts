@@ -1,3 +1,3 @@
-import { blocks } from '../features/blocks/blocks.ts';
+import { blocks } from '../blocks/blocks.ts';
 
 export type modelType = readonly (readonly blocks[])[];
