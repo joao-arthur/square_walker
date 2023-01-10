@@ -1,3 +1,3 @@
-import { modelType } from '../../game/modelType.ts';
+import { modelType } from '../model/mod.ts';
 
 export type renderFn = (model: modelType) => void;
