@@ -1,4 +1,3 @@
-import { perlinNoise2D } from 'https://deno.land/x/noise/mod.ts';
 import { simplexNoise2D } from 'https://deno.land/x/noise/mod.ts';
 
 export function generateNoise() {
