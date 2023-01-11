@@ -1,4 +1,4 @@
-import { logger } from "./logger.ts";
+import { logger } from "../logger.ts";
 
 function log(message: string): void {
     globalThis.console.log(message);

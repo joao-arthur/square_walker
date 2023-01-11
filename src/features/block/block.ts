@@ -1,4 +1,4 @@
-export enum blocks {
+export enum block {
     AIR,
     DIRT,
     GRASS,
