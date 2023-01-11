@@ -10,8 +10,12 @@
     "fmt": {
         "options": {
             "lineWidth": 70,
-            "indentWidth": 4,
-            "singleQuote": true
+            "indentWidth": 4
+        }
+    },
+    "lint": {
+        "rules": {
+            "include": ["explicit-function-return-type"]
         }
     }
 }

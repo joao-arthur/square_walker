@@ -1,1 +1,1 @@
-export type { renderFn } from './renderFn.ts';
+export type { renderFn } from "./renderFn.ts";

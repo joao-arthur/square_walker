@@ -1,18 +1,23 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useState } from "preact/hooks";
 
-export function useWindowDimensions() {
+type returnType = {
+    readonly width: number;
+    readonly height: number;
+};
+
+export function useWindowDimensions(): returnType {
     const [width, setWidth] = useState(window.innerWidth);
     const [height, setHeight] = useState(window.innerHeight);
 
-    function onWindowResize() {
+    function onWindowResize(): void {
         setWidth(window.innerWidth);
         setHeight(window.innerHeight);
     }
 
     useEffect(() => {
-        globalThis.addEventListener('resize', onWindowResize);
+        globalThis.addEventListener("resize", onWindowResize);
         return () =>
-            globalThis.removeEventListener('resize', onWindowResize);
+            globalThis.removeEventListener("resize", onWindowResize);
     }, []);
 
     return {

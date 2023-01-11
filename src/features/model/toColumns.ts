@@ -1,4 +1,4 @@
-import { modelType } from './modelType.ts';
+import { modelType } from "./modelType.ts";
 
 export function toColumns(
     model: modelType,

@@ -1,7 +1,7 @@
 export function initCanvasPaint(
     context: CanvasRenderingContext2D,
     dimensions: any,
-) {
+): void {
     const unitwidth = 10;
     const unitHeight = 10;
 
@@ -17,7 +17,7 @@ export function initCanvasPaint(
                 //        break;
                 //default: context.fillStyle = '#5555aa';
                 //}
-                context.fillStyle = '#5555aa';
+                context.fillStyle = "#5555aa";
 
                 const x = lineIndex * unitwidth;
                 const y = columnIndex * unitHeight;

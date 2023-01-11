@@ -7,14 +7,14 @@ import * as $0 from "./routes/index.tsx";
 import * as $$0 from "./islands/Canvas.tsx";
 
 const manifest = {
-  routes: {
-    "./routes/index.tsx": $0,
-  },
-  islands: {
-    "./islands/Canvas.tsx": $$0,
-  },
-  baseUrl: import.meta.url,
-  config,
+    routes: {
+        "./routes/index.tsx": $0,
+    },
+    islands: {
+        "./islands/Canvas.tsx": $$0,
+    },
+    baseUrl: import.meta.url,
+    config,
 };
 
 export default manifest;

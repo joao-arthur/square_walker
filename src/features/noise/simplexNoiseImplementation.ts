@@ -1,4 +1,4 @@
-import { simplexNoise2D } from 'https://deno.land/x/noise/mod.ts';
+import { simplexNoise2D } from "https://deno.land/x/noise/mod.ts";
 
 const simplexNoise = simplexNoise2D();
 

@@ -1,7 +1,7 @@
-import { assertEquals } from 'https://deno.land/std@0.171.0/testing/asserts.ts';
-import { toLines } from './toLines.ts';
+import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts.ts";
+import { toLines } from "./toLines.ts";
 
-Deno.test('toLines', () => {
+Deno.test("toLines", () => {
     assertEquals(
         toLines([
             [1, 2, 3, 4],

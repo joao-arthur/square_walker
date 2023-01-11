@@ -1,7 +1,7 @@
-import { assertEquals } from 'https://deno.land/std@0.171.0/testing/asserts.ts';
-import { toColumns } from './toColumns.ts';
+import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts.ts";
+import { toColumns } from "./toColumns.ts";
 
-Deno.test('toColumns', () => {
+Deno.test("toColumns", () => {
     assertEquals(
         toColumns([
             [1, 2, 3, 4],

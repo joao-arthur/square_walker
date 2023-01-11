@@ -1,4 +1,4 @@
-import { simplexNoise2D } from 'https://deno.land/x/noise/mod.ts';
+import { simplexNoise2D } from "https://deno.land/x/noise/mod.ts";
 
 export function generateNoise() {
     //  const perlinNoise = perlinNoise2D();
@@ -19,9 +19,9 @@ export function generateNoise() {
             column.map((_, lineIndex) =>
                 (simplexNoise(columnIndex, lineIndex) +
                         (lineIndex > 4 ? 1 : 0)) > 1
-                    ? 'T'
-                    : 'A'
-            ).join(' ')
+                    ? "T"
+                    : "A"
+            ).join(" ")
         ),
     );
 }
