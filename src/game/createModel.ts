@@ -1,4 +1,4 @@
-import { blocks } from "../features/blocks/blocks.ts";
+import { blocks } from "../features/blocks/mod.ts";
 import { modelType } from "../features/model/mod.ts";
 
 export function createModel(): modelType {

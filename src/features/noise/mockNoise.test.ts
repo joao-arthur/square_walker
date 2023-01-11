@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts";
+import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts.ts";
 import { mockNoise } from "./mockNoise.ts";
 
 Deno.test("mockNoise", () => {
