@@ -6,5 +6,5 @@ export function simplexNoiseImplementation(
     x: number,
     y: number,
 ): number {
-    return simplexNoise(x, y);
+    return Number(simplexNoise(x, y).toFixed(4));
 }

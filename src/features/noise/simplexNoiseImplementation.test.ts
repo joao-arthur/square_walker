@@ -3,8 +3,8 @@ import { simplexNoiseImplementation } from "./simplexNoiseImplementation.ts";
 import { numbers } from "npm:funis@1.0.1";
 
 Deno.test("simplexNoiseImplementation", () => {
-    const xRange = numbers.range(0, 100);
-    const yRange = numbers.range(0, 100);
+    const xRange = numbers.range(-50, 50);
+    const yRange = numbers.range(-50, 50);
 
     xRange.forEach((x) =>
         yRange.forEach((y) => {
