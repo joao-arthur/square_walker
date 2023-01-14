@@ -1,11 +1,10 @@
-import { simplexNoiseImplementation } from "../../features/noise/mod.ts";
-import { modelType } from "../../features/model/mod.ts";
+import { fromColumns, modelType } from "../model/mod.ts";
+import { simplexNoiseImplementation } from "../../adapters/noise/mod.ts";
+import { linearInterpolation } from "../../adapters/interpolation/mod.ts";
+import { block } from "../block/mod.ts";
 import { terrainRange } from "../terrainRange.ts";
-import { linearInterpolation } from "../interpolation/linearInterpolation.ts";
 import { chunckSize } from "../chunckSize.ts";
-import { block } from "../../features/block/block.ts";
 import { modelDimension } from "../modelDimension.ts";
-import { fromColumns } from "../../features/model/fromColumns.ts";
 
 export function generateChunck(numberOfTheChunck: number): modelType {
     const noiseValuePreviousChunck = simplexNoiseImplementation(

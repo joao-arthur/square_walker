@@ -1,9 +1,9 @@
-import { block } from "../features/block/mod.ts";
-import { modelType } from "../features/model/mod.ts";
-import { simplexNoiseImplementation } from "../features/noise/mod.ts";
-import { modelDimension } from "./modelDimension.ts";
-import { chunckSize } from "./chunckSize.ts";
+import { modelType } from "./model/mod.ts";
+import { simplexNoiseImplementation } from "../adapters/noise/mod.ts";
+import { block } from "./block/mod.ts";
 import { terrainRange } from "./terrainRange.ts";
+import { chunckSize } from "./chunckSize.ts";
+import { modelDimension } from "./modelDimension.ts";
 
 export function generateTerrain(): modelType {
     let currentChunck = 0;

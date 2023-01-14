@@ -1,4 +1,4 @@
-import { modelType } from "./modelType.ts";
+import { modelType } from "../model.ts";
 import { numbers } from "npm:funis@1.0.1";
 
 export function toLines(

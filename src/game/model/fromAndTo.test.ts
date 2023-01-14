@@ -1,8 +1,8 @@
 import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts.ts";
-import { fromLines } from "./fromLines.ts";
-import { toLines } from "./toLines.ts";
-import { fromColumns } from "./fromColumns.ts";
-import { toColumns } from "./toColumns.ts";
+import { fromLines } from "./fromLines/fromLines.ts";
+import { toLines } from "./toLines/toLines.ts";
+import { fromColumns } from "./fromColumns/fromColumns.ts";
+import { toColumns } from "./toColumns/toColumns.ts";
 
 Deno.test("fromAndTo", () => {
     assertEquals(
