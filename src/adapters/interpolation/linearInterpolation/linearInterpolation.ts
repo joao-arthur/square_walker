@@ -1,4 +1,4 @@
-import { numbers } from "npm:funis@1.0.1";
+import { numbers } from "https://deno.land/x/funis@v1.0.0/mod.ts";
 
 export function linearInterpolation(
     numA: number,
