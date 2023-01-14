@@ -1,7 +1,6 @@
-import { fromColumns, modelType } from "../model/mod.ts";
+import { blockType, fromColumns, modelType } from "../model/mod.ts";
 import { simplexNoiseImplementation } from "../../adapters/noise/mod.ts";
 import { linearInterpolation } from "../../adapters/interpolation/mod.ts";
-import { blockType } from "../block/mod.ts";
 import { terrainRange } from "../terrainRange.ts";
 import { chunckSize } from "../chunckSize.ts";
 import { modelDimension } from "../modelDimension.ts";

@@ -1,4 +1,4 @@
-import { blockType } from "../../../block/mod.ts";
+import { blockType } from "../../../model/mod.ts";
 
 export function toConsole(blockValue: blockType): string {
     switch (blockValue) {
