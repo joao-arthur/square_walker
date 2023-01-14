@@ -27,8 +27,8 @@ export function canvasRender(
 
             // context.fillStyle = "#5555aa";
 
-            const x = lineIndex * unitwidth;
-            const y = columnIndex * unitHeight;
+            const x = columnIndex * unitwidth;
+            const y = lineIndex * unitHeight;
 
             context.fillRect(
                 x,

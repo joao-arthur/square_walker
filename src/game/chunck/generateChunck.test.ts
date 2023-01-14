@@ -3,6 +3,7 @@ import { generateChunck } from "./generateChunck.ts";
 import { consoleRender } from "../UI/console/render/mod.ts";
 import { simplexNoise } from "../../adapters/noise/mod.ts";
 import { linearInterpolation } from "../../adapters/interpolation/mod.ts";
+import { addChunckOnEnd } from "../model/addChunckOnEnd/addChunckOnEnd.ts";
 
 Deno.test("generateChunck", () => {
     const chunck0 = generateChunck(
@@ -26,8 +27,13 @@ Deno.test("generateChunck", () => {
         linearInterpolation,
     );
 
-    //consoleRender(chunck0);
-    //consoleRender(chunck1);
-    //consoleRender(chunck2);
-    //consoleRender(chunck3);
+    consoleRender(
+        addChunckOnEnd(
+            addChunckOnEnd(
+                addChunckOnEnd(chunck0, chunck1),
+                chunck2,
+            ),
+            chunck3,
+        ),
+    );
 });
