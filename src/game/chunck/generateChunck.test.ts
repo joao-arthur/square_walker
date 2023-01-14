@@ -26,8 +26,8 @@ Deno.test("generateChunck", () => {
         linearInterpolation,
     );
 
-    consoleRender(chunck0);
-    consoleRender(chunck1);
-    consoleRender(chunck2);
-    consoleRender(chunck3);
+    //consoleRender(chunck0);
+    //consoleRender(chunck1);
+    //consoleRender(chunck2);
+    //consoleRender(chunck3);
 });
