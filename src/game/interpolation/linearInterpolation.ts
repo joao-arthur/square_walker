@@ -18,5 +18,5 @@ export function linearInterpolation(
                 length
             ).toFixed(4),
         ),
-    ).map(Math.floor);
+    ).map(Math.round);
 }

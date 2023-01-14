@@ -6,7 +6,6 @@ Deno.test("linearInterpolation", () => {
         linearInterpolation(10, 20, 20),
         [
             10,
-            10,
             11,
             11,
             12,
@@ -25,6 +24,7 @@ Deno.test("linearInterpolation", () => {
             18,
             19,
             19,
+            20,
             20,
         ],
     );

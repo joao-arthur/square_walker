@@ -1,9 +1,11 @@
 import { modelType } from "./modelType.ts";
+import { numbers } from "npm:funis@1.0.1";
 
 export function toLines(
     model: modelType,
 ): modelType {
-    return model.map((_, index) =>
-        model.map((column) => column[index])
-    );
+    const iArr = numbers.range(0, model.length - 1);
+    const jArr = numbers.range(0, model[0].length - 1);
+
+    return jArr.map((j) => iArr.map((i) => model[i][j]));
 }
