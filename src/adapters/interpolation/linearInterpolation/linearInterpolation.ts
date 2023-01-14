@@ -1,19 +1,19 @@
 import { numbers } from "npm:funis@1.0.1";
 
 export function linearInterpolation(
-    valueA: number,
-    valueB: number,
+    numA: number,
+    numB: number,
     length: number,
 ): readonly number[] {
     return numbers.range(
-        valueA,
-        valueB,
+        numA,
+        numB,
         Number(
             (
                 (
-                    valueA > valueB
-                        ? -Math.abs(valueA - valueB)
-                        : Math.abs(valueA - valueB)
+                    numA > numB
+                        ? -Math.abs(numA - numB)
+                        : Math.abs(numA - numB)
                 ) /
                 length
             ).toFixed(4),
