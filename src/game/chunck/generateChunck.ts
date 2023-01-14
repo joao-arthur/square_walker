@@ -1,7 +1,7 @@
 import { fromColumns, modelType } from "../model/mod.ts";
 import { simplexNoiseImplementation } from "../../adapters/noise/mod.ts";
 import { linearInterpolation } from "../../adapters/interpolation/mod.ts";
-import { block } from "../block/mod.ts";
+import { blockType } from "../block/mod.ts";
 import { terrainRange } from "../terrainRange.ts";
 import { chunckSize } from "../chunckSize.ts";
 import { modelDimension } from "../modelDimension.ts";
@@ -32,9 +32,15 @@ export function generateChunck(numberOfTheChunck: number): modelType {
     return fromColumns(
         lineHeight.map((height) =>
             Array(modelDimension.height)
-                .fill(block.AIR).fill(
-                    block.DIRT,
+                .fill(blockType.AIR)
+                .fill(
+                    blockType.GRASS,
                     modelDimension.height - height,
+                    modelDimension.height - height + 1,
+                )
+                .fill(
+                    blockType.DIRT,
+                    (modelDimension.height - height) + 1,
                 )
         ),
     );

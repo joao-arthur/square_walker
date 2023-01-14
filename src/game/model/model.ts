@@ -1,3 +1,3 @@
-import { block } from "../block/mod.ts";
+import { blockType } from "../block/mod.ts";
 
-export type modelType = readonly (readonly block[])[];
+export type modelType = readonly (readonly blockType[])[];

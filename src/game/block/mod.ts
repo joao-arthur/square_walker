@@ -1,1 +1,1 @@
-export { block } from "./block.ts";
+export { blockType } from "./block.ts";

@@ -8,9 +8,6 @@ Deno.test("generateChunck", () => {
     const chunck2 = generateChunck(2);
     const chunck3 = generateChunck(3);
 
-    // console.log(fromColumns(chunck0));
-    // console.log(toLines(chunck0));
-
     consoleRender(chunck0);
     consoleRender(chunck1);
     consoleRender(chunck2);

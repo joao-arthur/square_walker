@@ -1,6 +1,6 @@
 import { modelType } from "./model/mod.ts";
 import { simplexNoiseImplementation } from "../adapters/noise/mod.ts";
-import { block } from "./block/mod.ts";
+import { blockType } from "./block/mod.ts";
 import { terrainRange } from "./terrainRange.ts";
 import { chunckSize } from "./chunckSize.ts";
 import { modelDimension } from "./modelDimension.ts";
@@ -24,18 +24,18 @@ export function generateTerrain(): modelType {
     const dirtGenerated = model.map((column, columnIndex) =>
         column.map((current, lineIndex) =>
             (simplexNoiseImplementation(columnIndex, 0) + 0.7) > 1
-                ? block.DIRT
+                ? blockType.DIRT
                 : current
         )
     );
 
     return dirtGenerated.map((column) => {
         const numberOfDirts = column.filter((value) =>
-            value === block.DIRT
+            value === blockType.DIRT
         ).length;
 
-        return Array(100).fill(block.AIR).fill(
-            block.DIRT,
+        return Array(100).fill(blockType.AIR).fill(
+            blockType.DIRT,
             100 - numberOfDirts - 1,
         );
     });
