@@ -2,10 +2,7 @@ import { useEffect, useRef } from "preact/hooks";
 import { ComponentChildren } from "preact";
 import { useWindowDimensions } from "../components/useWindowDimensions.ts";
 import { canvasRender } from "../src/game/UI/canvas/canvasRender.ts";
-import {
-    addChunckOnEnd,
-    generateChunck,
-} from "../src/game/features/chunck/mod.ts";
+import { chunckFns } from "../src/game/features/mod.ts";
 import { simplexNoise } from "../src/adapters/noise/mod.ts";
 import { linearInterpolation } from "../src/adapters/interpolation/mod.ts";
 
@@ -22,18 +19,18 @@ export default function Canvas(): ComponentChildren {
             return;
         }
         let i = 1;
-        let model = generateChunck(
+        let model = chunckFns.generate(
             0,
             simplexNoise,
             linearInterpolation,
         );
         for (i = 1; i < 20; i++) {
-            const chunck = generateChunck(
+            const chunck = chunckFns.generate(
                 i,
                 simplexNoise,
                 linearInterpolation,
             );
-            model = addChunckOnEnd(model, chunck);
+            model = chunckFns.addOnEnd(model, chunck);
         }
         let camera = {
             x: 0,

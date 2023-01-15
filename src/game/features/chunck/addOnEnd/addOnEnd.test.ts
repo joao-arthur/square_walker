@@ -1,24 +1,24 @@
 import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts.ts";
-import { blockType, fromLines } from "../../model/mod.ts";
-import { addChunckOnEnd } from "./addChunckOnEnd.ts";
+import { blockType, modelFns } from "../../model/mod.ts";
+import { addOnEnd } from "./addOnEnd.ts";
 
-Deno.test("addChunckOnEnd", () => {
+Deno.test("addOnEnd", () => {
     assertEquals(
-        addChunckOnEnd(
-            fromLines([
+        addOnEnd(
+            modelFns.fromLines([
                 [blockType.AIR, blockType.AIR],
                 [blockType.AIR, blockType.GRASS],
                 [blockType.GRASS, blockType.DIRT],
                 [blockType.DIRT, blockType.DIRT],
             ]),
-            fromLines([
+            modelFns.fromLines([
                 [blockType.GRASS],
                 [blockType.DIRT],
                 [blockType.DIRT],
                 [blockType.DIRT],
             ]),
         ),
-        fromLines([
+        modelFns.fromLines([
             [blockType.AIR, blockType.AIR, blockType.GRASS],
             [blockType.AIR, blockType.GRASS, blockType.DIRT],
             [blockType.GRASS, blockType.DIRT, blockType.DIRT],

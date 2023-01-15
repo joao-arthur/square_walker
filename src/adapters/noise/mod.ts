@@ -1,1 +1,1 @@
-export { simplexNoise } from "./simplexNoise/simplexNoise.ts";
+export { simplexNoise } from "./simplexNoise/mod.ts";

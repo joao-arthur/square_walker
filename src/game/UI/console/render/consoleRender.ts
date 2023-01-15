@@ -1,4 +1,4 @@
-import { modelType } from "../../../features/model/mod.ts";
+import { modelType } from "../../../features/mod.ts";
 import { modelToConsole } from "./modelToConsole.ts";
 
 export function consoleRender(model: modelType): void {

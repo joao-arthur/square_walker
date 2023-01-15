@@ -1,24 +1,24 @@
-import { generateChunck } from "./generateChunck.ts";
+import { generate } from "./generate.ts";
 import { simplexNoise } from "../../../../adapters/noise/mod.ts";
 import { linearInterpolation } from "../../../../adapters/interpolation/mod.ts";
 
-Deno.test("generateChunck", () => {
-    const chunck0 = generateChunck(
+Deno.test("generate", () => {
+    const chunck0 = generate(
         0,
         simplexNoise,
         linearInterpolation,
     );
-    const chunck1 = generateChunck(
+    const chunck1 = generate(
         1,
         simplexNoise,
         linearInterpolation,
     );
-    const chunck2 = generateChunck(
+    const chunck2 = generate(
         2,
         simplexNoise,
         linearInterpolation,
     );
-    const chunck3 = generateChunck(
+    const chunck3 = generate(
         3,
         simplexNoise,
         linearInterpolation,

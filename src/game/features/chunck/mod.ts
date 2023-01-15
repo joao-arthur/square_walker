@@ -1,3 +1,9 @@
-export { generateChunck } from "./generate/mod.ts";
-export { addChunckOnStart } from "./addChunckOnStart/mod.ts";
-export { addChunckOnEnd } from "./addChunckOnEnd/mod.ts";
+import { generate } from "./generate/mod.ts";
+import { addOnStart } from "./addOnStart/mod.ts";
+import { addOnEnd } from "./addOnEnd/mod.ts";
+
+export const chunckFns = {
+    generate,
+    addOnStart,
+    addOnEnd,
+} as const;

@@ -1,7 +1,15 @@
 export type { modelType } from "./model.ts";
 export { blockType } from "./block.ts";
-export { modelDimension } from "./modelDimension.ts";
-export { fromColumns } from "./fromColumns/mod.ts";
-export { fromLines } from "./fromLines/mod.ts";
-export { toColumns } from "./toColumns/mod.ts";
-export { toLines } from "./toLines/mod.ts";
+import { modelDimension } from "./modelDimension.ts";
+import { fromColumns } from "./fromColumns/mod.ts";
+import { fromLines } from "./fromLines/mod.ts";
+import { toColumns } from "./toColumns/mod.ts";
+import { toLines } from "./toLines/mod.ts";
+
+export const modelFns = {
+    modelDimension,
+    fromColumns,
+    fromLines,
+    toColumns,
+    toLines,
+} as const;

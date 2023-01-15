@@ -1,15 +1,10 @@
 import { noiseFn } from "../../../../ports/noise.ts";
 import { interpolationFn } from "../../../../ports/interpolation.ts";
-import {
-    blockType,
-    fromColumns,
-    modelDimension,
-    modelType,
-} from "../../model/mod.ts";
+import { blockType, modelFns, modelType } from "../../model/mod.ts";
 import { terrainRange } from "../terrainRange.ts";
 import { chunckSize } from "../chunckSize.ts";
 
-export function generateChunck(
+export function generate(
     numberOfTheChunck: number,
     noise: noiseFn,
     interpolation: interpolationFn,
@@ -30,18 +25,18 @@ export function generateChunck(
         chunckSize,
     );
 
-    return fromColumns(
+    return modelFns.fromColumns(
         lineHeight.map((height) =>
-            Array(modelDimension.height)
+            Array(modelFns.modelDimension.height)
                 .fill(blockType.AIR)
                 .fill(
                     blockType.GRASS,
-                    modelDimension.height - height,
-                    modelDimension.height - height + 1,
+                    modelFns.modelDimension.height - height,
+                    modelFns.modelDimension.height - height + 1,
                 )
                 .fill(
                     blockType.DIRT,
-                    (modelDimension.height - height) + 1,
+                    (modelFns.modelDimension.height - height) + 1,
                 )
         ),
     );

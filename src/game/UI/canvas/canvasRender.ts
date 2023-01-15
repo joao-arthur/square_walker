@@ -1,12 +1,10 @@
 import { dimensionType } from "../../../core/dimension.ts";
 import {
     blockType,
-    modelDimension,
+    cameraType,
+    modelFns,
     modelType,
-    toColumns,
-    toLines,
-} from "../../features/model/mod.ts";
-import { cameraType } from "../../features/camera/mod.ts";
+} from "../../features/mod.ts";
 
 export function canvasRender(
     context: CanvasRenderingContext2D,
@@ -17,31 +15,16 @@ export function canvasRender(
     const unitwidth = 10;
     const unitHeight = 10;
 
-    console.log(model);
-    console.log(
-        toColumns(model)
-            .slice(camera.x, camera.x + camera.width),
-    );
-    console.log(
-        toLines(
-            toColumns(model)
-                .slice(camera.x, camera.x + camera.width),
-        )
-            .slice(
-                modelDimension.height - camera.y,
-                modelDimension.height - (camera.y + camera.height),
-            ),
-    );
-
-    const modelInCamera = toLines(
-        toColumns(model)
+    const modelInCamera = modelFns.toLines(
+        modelFns.toColumns(model)
             .map((column) =>
                 column.slice(camera.x, camera.x + camera.width)
             ),
     ).map((line) =>
         line.slice(
-            modelDimension.height - camera.y,
-            modelDimension.height - (camera.y + camera.height),
+            modelFns.modelDimension.height - camera.y,
+            modelFns.modelDimension.height -
+                (camera.y + camera.height),
         )
     );
 

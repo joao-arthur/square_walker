@@ -1,1 +1,1 @@
-export { linearInterpolation } from "./linearInterpolation/linearInterpolation.ts";
+export { linearInterpolation } from "./linearInterpolation/mod.ts";

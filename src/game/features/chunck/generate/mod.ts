@@ -1,1 +1,1 @@
-export { generateChunck } from "./generateChunck.ts";
+export { generate } from "./generate.ts";
