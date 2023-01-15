@@ -1,6 +1,7 @@
 import { dimensionType } from "../../../core/dimension.ts";
 import {
     blockType,
+    cameraFns,
     cameraType,
     modelFns,
     modelType,
@@ -15,18 +16,7 @@ export function canvasRender(
     const unitwidth = 10;
     const unitHeight = 10;
 
-    const modelInCamera = modelFns.toLines(
-        modelFns.toColumns(model)
-            .map((column) =>
-                column.slice(camera.x, camera.x + camera.width)
-            ),
-    ).map((line) =>
-        line.slice(
-            modelFns.modelDimension.height - camera.y,
-            modelFns.modelDimension.height -
-                (camera.y + camera.height),
-        )
-    );
+    const modelInCamera = cameraFns.applyToModel(model, camera);
 
     modelInCamera.forEach((column, columnIndex) => {
         column.forEach((block, lineIndex) => {
