@@ -27,13 +27,13 @@ Deno.test("generateChunck", () => {
         linearInterpolation,
     );
 
-    consoleRender(
-        addChunckOnEnd(
-            addChunckOnEnd(
-                addChunckOnEnd(chunck0, chunck1),
-                chunck2,
-            ),
-            chunck3,
-        ),
-    );
+    //consoleRender(
+    //    addChunckOnEnd(
+    //        addChunckOnEnd(
+    //            addChunckOnEnd(chunck0, chunck1),
+    //            chunck2,
+    //        ),
+    //        chunck3,
+    //    ),
+    //);
 });
