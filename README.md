@@ -6,10 +6,11 @@ A 2d random generated scenario in blocks.
 
 ### Scenario
 
-- 🚧 Terrain
+- ✅ Terrain
+- ✅ Camera
+- 🚧 Biomes
 - 🚧 Lake
 - 🚧 Character
-- 🚧 Camera
 - 🚧 Animations
 - 🚧 Entities
 - 🚧 Structures
