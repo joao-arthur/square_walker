@@ -1,6 +1,4 @@
-import { fromColumns } from "../fromColumns/mod.ts";
-import { toColumns } from "../toColumns/mod.ts";
-import { modelType } from "../model.ts";
+import { fromColumns, modelType, toColumns } from "../../model/mod.ts";
 
 export function addChunckOnStart(
     model: modelType,

@@ -2,12 +2,12 @@ import { useEffect, useRef } from "preact/hooks";
 import { ComponentChildren } from "preact";
 import { useWindowDimensions } from "../components/useWindowDimensions.ts";
 import { canvasRender } from "../src/game/UI/canvas/canvasRender.ts";
-import { generateChunck } from "../src/game/chunck/generateChunck.ts";
-import { simplexNoise } from "../src/adapters/noise/simplexNoise/simplexNoise.ts";
-import { linearInterpolation } from "../src/adapters/interpolation/linearInterpolation/linearInterpolation.ts";
 import {
     addChunckOnEnd,
-} from "../src/game/model/addChunckOnEnd/addChunckOnEnd.ts";
+    generateChunck,
+} from "../src/game/features/chunck/mod.ts";
+import { simplexNoise } from "../src/adapters/noise/mod.ts";
+import { linearInterpolation } from "../src/adapters/interpolation/mod.ts";
 
 export default function Canvas(): ComponentChildren {
     const dimensions = useWindowDimensions();

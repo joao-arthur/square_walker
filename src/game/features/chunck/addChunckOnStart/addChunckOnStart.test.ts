@@ -1,6 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts.ts";
-import { blockType } from "../block.ts";
-import { fromLines } from "../fromLines/mod.ts";
+import { blockType, fromLines } from "../../model/mod.ts";
 import { addChunckOnStart } from "./addChunckOnStart.ts";
 
 Deno.test("addChunckOnStart", () => {
