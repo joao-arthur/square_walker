@@ -1,14 +1,16 @@
 import { Head } from "$fresh/runtime.ts";
 import Canvas from "../islands/Canvas.tsx";
-import { ComponentChildren } from "preact";
+import { VNode } from "preact";
 
-export default function Index(): ComponentChildren {
+export default function Index(): VNode {
     return (
         <>
             <Head>
                 <title>Square Walker</title>
             </Head>
-            <Canvas />
+            <main class="bg-[#e8e8e8] w-screen h-screen flex">
+                <Canvas />
+            </main>
         </>
     );
 }

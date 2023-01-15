@@ -13,25 +13,22 @@ export function canvasRender(
     model: modelType,
     camera: cameraType,
 ): void {
-    const unitwidth = 10;
-    const unitHeight = 10;
-
     const modelInCamera = cameraFns.applyToModel(model, camera);
+    const unitwidth = dimensions.width / modelInCamera.length;
+    const unitHeight = dimensions.height / modelInCamera[0].length;
 
     modelInCamera.forEach((column, columnIndex) => {
         column.forEach((block, lineIndex) => {
             switch (block) {
                 case blockType.AIR:
-                    context.fillStyle = "#000000";
+                    context.fillStyle = "#ebf7ff";
                     break;
                 case blockType.GRASS:
-                    context.fillStyle = "#444";
+                    context.fillStyle = "#126b23";
                     break;
                 case blockType.DIRT:
-                    context.fillStyle = "#555555";
+                    context.fillStyle = "#453c01";
                     break;
-                default:
-                    context.fillStyle = "#5555aa";
             }
 
             // context.fillStyle = "#5555aa";

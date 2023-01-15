@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "preact/hooks";
-import { ComponentChildren } from "preact";
+import { VNode } from "preact";
 import { useWindowDimensions } from "../components/useWindowDimensions.ts";
 import { canvasRender } from "../src/game/UI/canvas/canvasRender.ts";
 import { chunckFns } from "../src/game/features/mod.ts";
@@ -7,8 +7,9 @@ import { simplexNoise } from "../src/adapters/noise/mod.ts";
 import { linearInterpolation } from "../src/adapters/interpolation/mod.ts";
 import { cameraFns } from "../src/game/features/camera/mod.ts";
 
-export default function Canvas(): ComponentChildren {
+export default function Canvas(): VNode {
     const dimensions = useWindowDimensions();
+    const dimension = Math.min(dimensions.height, dimensions.width);
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
@@ -35,9 +36,9 @@ export default function Canvas(): ComponentChildren {
         }
         let camera = {
             x: 0,
-            y: 50,
-            width: 30,
-            height: 30,
+            y: 30,
+            width: 50,
+            height: 50,
         };
 
         globalThis.addEventListener("keydown", (e) => {
@@ -81,20 +82,24 @@ export default function Canvas(): ComponentChildren {
         setInterval(() => {
             canvasRender(
                 context,
-                dimensions,
+                {
+                    width: dimension,
+                    height: dimension,
+                },
                 model,
                 camera,
             );
-        }, 300);
+        }, 30);
     }, []);
 
     return (
         <canvas
-            width={dimensions.width}
-            height={dimensions.height}
+            className="m-auto"
+            width={dimension}
+            height={dimension}
             style={{
-                width: dimensions.width,
-                height: dimensions.height,
+                width: dimension,
+                height: dimension,
             }}
             ref={canvasRef}
         />

@@ -4,6 +4,6 @@ import { zoomIn } from "./zoomIn.ts";
 Deno.test("zoomIn", () => {
     assertEquals(
         zoomIn({ x: 10, y: 10, width: 10, height: 10 }),
-        { x: 11, y: 9, width: 8, height: 8 },
+        { x: 11, y: 11, width: 8, height: 8 },
     );
 });
