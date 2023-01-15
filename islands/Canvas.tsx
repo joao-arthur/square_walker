@@ -35,14 +35,21 @@ export default function Canvas(): ComponentChildren {
             );
             model = addChunckOnEnd(model, chunck);
         }
+        let camera = {
+            x: 0,
+            y: 50,
+            width: 30,
+            height: 30,
+        };
 
         setInterval(() => {
             canvasRender(
                 context,
                 dimensions,
                 model,
+                camera,
             );
-        }, 250);
+        }, 3000);
     }, []);
 
     return (

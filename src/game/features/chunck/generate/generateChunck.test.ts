@@ -1,9 +1,6 @@
-import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts.ts";
 import { generateChunck } from "./generateChunck.ts";
-import { consoleRender } from "../UI/console/render/mod.ts";
-import { simplexNoise } from "../../adapters/noise/mod.ts";
-import { linearInterpolation } from "../../adapters/interpolation/mod.ts";
-import { addChunckOnEnd } from "../model/addChunckOnEnd/addChunckOnEnd.ts";
+import { simplexNoise } from "../../../../adapters/noise/mod.ts";
+import { linearInterpolation } from "../../../../adapters/interpolation/mod.ts";
 
 Deno.test("generateChunck", () => {
     const chunck0 = generateChunck(

@@ -1,9 +1,13 @@
-import { blockType, fromColumns, modelType } from "../model/mod.ts";
-import { noiseFn } from "../../ports/noise.ts";
-import { interpolationFn } from "../../ports/interpolation.ts";
+import { noiseFn } from "../../../../ports/noise.ts";
+import { interpolationFn } from "../../../../ports/interpolation.ts";
+import {
+    blockType,
+    fromColumns,
+    modelDimension,
+    modelType,
+} from "../../model/mod.ts";
 import { terrainRange } from "../terrainRange.ts";
 import { chunckSize } from "../chunckSize.ts";
-import { modelDimension } from "../modelDimension.ts";
 
 export function generateChunck(
     numberOfTheChunck: number,

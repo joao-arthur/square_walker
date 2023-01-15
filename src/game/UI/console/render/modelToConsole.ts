@@ -1,5 +1,5 @@
 import { toConsole } from "./toConsole.ts";
-import { modelType, toLines } from "../../../model/mod.ts";
+import { modelType, toLines } from "../../../features/model/mod.ts";
 
 export function modelToConsole(model: modelType): string[] {
     return toLines(model)
