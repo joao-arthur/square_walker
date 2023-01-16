@@ -2,10 +2,9 @@ import { useEffect, useRef } from "preact/hooks";
 import { VNode } from "preact";
 import { useWindowDimensions } from "../components/useWindowDimensions.ts";
 import { canvasRender } from "../src/game/UI/canvas/canvasRender.ts";
-import { chunckFns } from "../src/game/features/mod.ts";
+import { cameraFns, chunckFns } from "../src/game/features/mod.ts";
 import { simplexNoise } from "../src/adapters/noise/mod.ts";
 import { linearInterpolation } from "../src/adapters/interpolation/mod.ts";
-import { cameraFns } from "../src/game/features/camera/mod.ts";
 
 export default function Canvas(): VNode {
     const dimensions = useWindowDimensions();

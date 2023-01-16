@@ -3,8 +3,8 @@ import {
     blockType,
     cameraFns,
     cameraType,
-    modelFns,
     modelType,
+    scenarioFns,
 } from "../../features/mod.ts";
 
 export function canvasRender(

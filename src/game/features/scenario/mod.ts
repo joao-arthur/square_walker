@@ -6,7 +6,7 @@ import { fromLines } from "./fromLines/mod.ts";
 import { toColumns } from "./toColumns/mod.ts";
 import { toLines } from "./toLines/mod.ts";
 
-export const modelFns = {
+export const scenarioFns = {
     modelDimension,
     fromColumns,
     fromLines,
