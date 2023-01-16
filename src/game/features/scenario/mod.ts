@@ -1,4 +1,4 @@
-export type { modelType } from "./model.ts";
+export type { scenarioType } from "./scenario.ts";
 export { blockType } from "./block.ts";
 import { modelDimension } from "./modelDimension.ts";
 import { fromColumns } from "./fromColumns/mod.ts";

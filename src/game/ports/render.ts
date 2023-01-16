@@ -1,3 +1,3 @@
-import { modelType } from "../scenario/mod.ts";
+import { scenarioType } from "../scenario/mod.ts";
 
-export type renderFn = (model: modelType) => void;
+export type renderFn = (scenario: scenarioType) => void;

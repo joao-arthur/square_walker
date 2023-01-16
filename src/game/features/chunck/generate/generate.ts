@@ -2,8 +2,8 @@ import { noiseFn } from "../../../../ports/noise.ts";
 import { interpolationFn } from "../../../../ports/interpolation.ts";
 import {
     blockType,
-    modelType,
     scenarioFns,
+    scenarioType,
 } from "../../scenario/mod.ts";
 import { terrainRange } from "../terrainRange.ts";
 import { chunckSize } from "../chunckSize.ts";
@@ -12,7 +12,7 @@ export function generate(
     numberOfTheChunck: number,
     noise: noiseFn,
     interpolation: interpolationFn,
-): modelType {
+): scenarioType {
     const noiseValuePreviousChunck = noise(numberOfTheChunck);
     const noiseValueCurrentChunck = noise(numberOfTheChunck + 1);
 

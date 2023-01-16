@@ -8,16 +8,28 @@ A 2d random generated scenario in blocks.
 
 - ✅ Terrain
 - ✅ Camera
+  - 🚧 Move with player
+- 🚧 Player
+  - 🚧 Move
+  - 🚧 Jump
+  - 🚧 Animation
 - 🚧 Biomes
+  - 🚧 Grass size (1 - 5)
+  - 🚧 Snow
+  - 🚧 Plains
+  - 🚧 Mountain
 - 🚧 Lake
-- 🚧 Character
 - 🚧 Animations
 - 🚧 Entities
+  - 🚧 Clouds
+  - 🚧 Rain
 - 🚧 Structures
+  - 🚧 Trees
+  - 🚧 Animals
 
 ### View
 
-- 🚧 Canvas
+- ✅ Canvas
 - 🚧 OpenGL
 
 ## Run it

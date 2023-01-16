@@ -1,11 +1,11 @@
-import { modelType, scenarioFns } from "../../scenario/mod.ts";
+import { scenarioFns, scenarioType } from "../../scenario/mod.ts";
 
 export function addOnStart(
-    model: modelType,
-    chunck: modelType,
-): modelType {
+    scenario: scenarioType,
+    chunck: scenarioType,
+): scenarioType {
     return scenarioFns.fromColumns([
         ...scenarioFns.toColumns(chunck),
-        ...scenarioFns.toColumns(model),
+        ...scenarioFns.toColumns(scenario),
     ]);
 }

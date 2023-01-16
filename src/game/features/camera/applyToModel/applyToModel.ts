@@ -1,13 +1,13 @@
 import { pipe } from "https://deno.land/x/funis@v1.0.0/mod.ts";
-import { modelType, scenarioFns } from "../../scenario/mod.ts";
+import { scenarioFns, scenarioType } from "../../scenario/mod.ts";
 import { cameraType } from "../camera.ts";
 
 export function applyToModel(
-    model: modelType,
+    scenario: scenarioType,
     camera: cameraType,
-): modelType {
+): scenarioType {
     return pipe(
-        () => model,
+        () => scenario,
         scenarioFns.toColumns,
         (current) => current.slice(camera.x, camera.x + camera.width),
         scenarioFns.toLines,

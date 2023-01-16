@@ -1,11 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
+import { dimensionType } from "../src/core/dimension.ts";
 
-type returnType = {
-    readonly width: number;
-    readonly height: number;
-};
-
-export function useWindowDimensions(): returnType {
+export function useWindowDimensions(): dimensionType {
     const [width, setWidth] = useState(window.innerWidth);
     const [height, setHeight] = useState(window.innerHeight);
 

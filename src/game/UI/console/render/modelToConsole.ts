@@ -1,8 +1,8 @@
-import { modelType, scenarioFns } from "../../../features/mod.ts";
+import { scenarioFns, scenarioType } from "../../../features/mod.ts";
 import { toConsole } from "./toConsole.ts";
 
-export function modelToConsole(model: modelType): string[] {
-    return scenarioFns.toLines(model)
+export function modelToConsole(scenario: scenarioType): string[] {
+    return scenarioFns.toLines(scenario)
         .map((line) => line.map(toConsole))
         .map((line) => line.join(""));
 }
