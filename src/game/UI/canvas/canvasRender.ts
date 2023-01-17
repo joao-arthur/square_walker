@@ -37,4 +37,15 @@ export function canvasRender(model: gameModelType): void {
             );
         });
     });
+
+    const image = new Image();
+    image.src = "assets/player.png";
+
+    model.context.drawImage(
+        image,
+        300,
+        300,
+        unitwidth,
+        unitHeight * 2,
+    );
 }
