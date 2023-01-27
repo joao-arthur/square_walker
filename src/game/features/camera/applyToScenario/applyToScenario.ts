@@ -2,7 +2,7 @@ import { pipe } from "https://deno.land/x/funis@v1.0.0/mod.ts";
 import { scenarioFns, scenarioType } from "../../scenario/mod.ts";
 import { cameraType } from "../camera.ts";
 
-export function applyToModel(
+export function applyToScenario(
     scenario: scenarioType,
     camera: cameraType,
 ): scenarioType {

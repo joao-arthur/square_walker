@@ -2,7 +2,7 @@ import { blockType, cameraFns } from "../../features/mod.ts";
 import { gameModelType } from "../../gameModel.ts";
 
 export function canvasRender(model: gameModelType): void {
-    const modelInCamera = cameraFns.applyToModel(
+    const modelInCamera = cameraFns.applyToScenario(
         model.scenario,
         model.camera,
     );
@@ -41,10 +41,11 @@ export function canvasRender(model: gameModelType): void {
     const image = new Image();
     image.src = "assets/player.png";
 
+    model.context.imageSmoothingEnabled = false;
     model.context.drawImage(
         image,
-        300,
-        300,
+        model.player.x,
+        model.dimensions.height - model.player.y,
         unitwidth,
         unitHeight * 2,
     );

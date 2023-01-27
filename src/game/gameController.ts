@@ -4,6 +4,7 @@ import { simplexNoise } from "../adapters/noise/mod.ts";
 import { linearInterpolation } from "../adapters/interpolation/mod.ts";
 import { dimensionType } from "../core/dimension.ts";
 import { gameModelType } from "./gameModel.ts";
+import { updateEntities } from "./eventLoop/updateEntities.ts";
 
 const FPS = 30;
 const INTERVAL = 1000 / FPS;
@@ -48,6 +49,16 @@ function init(params: paramsType): void {
         width: 50,
         height: 50,
     };
+    model.player = {
+        width: 1,
+        height: 1,
+        x: 1,
+        y: 50,
+        xSpeed: 0,
+        ySpeed: 0,
+        xAcelleration: 0,
+        yAcelleration: 0,
+    };
 
     globalThis.addEventListener("keydown", (e) => {
         switch (e.code) {
@@ -63,17 +74,30 @@ function init(params: paramsType): void {
             case "ArrowDown":
                 model.camera = cameraFns.moveDown(model.camera);
                 break;
+            //
             case "KeyW":
-                model.camera = cameraFns.moveUp(model.camera);
+                model.player = {
+                    ...model.player,
+                    y: model.player.y + 1,
+                };
                 break;
             case "KeyA":
-                model.camera = cameraFns.moveLeft(model.camera);
+                model.player = {
+                    ...model.player,
+                    x: model.player.x - 1,
+                };
                 break;
             case "KeyS":
-                model.camera = cameraFns.moveDown(model.camera);
+                model.player = {
+                    ...model.player,
+                    y: model.player.y - 1,
+                };
                 break;
             case "KeyD":
-                model.camera = cameraFns.moveRight(model.camera);
+                model.player = {
+                    ...model.player,
+                    x: model.player.x + 1,
+                };
                 break;
         }
         switch (e.key) {
@@ -90,6 +114,7 @@ function init(params: paramsType): void {
 }
 
 function renderLoop(): void {
+    updateEntities(model);
     canvasRender(model);
 }
 

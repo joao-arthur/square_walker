@@ -5,7 +5,8 @@ import { moveUp } from "./moveUp/mod.ts";
 import { moveDown } from "./moveDown/mod.ts";
 import { zoomIn } from "./zoomIn/mod.ts";
 import { zoomOut } from "./zoomOut/mod.ts";
-import { applyToModel } from "./applyToModel/mod.ts";
+import { applyToScenario } from "./applyToScenario/mod.ts";
+import { isValid } from "./isValid/mod.ts";
 
 export const cameraFns = {
     moveLeft,
@@ -14,5 +15,6 @@ export const cameraFns = {
     moveDown,
     zoomIn,
     zoomOut,
-    applyToModel,
+    applyToScenario,
+    isValid,
 } as const;

@@ -1,10 +1,10 @@
 import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts.ts";
 import { scenarioFns } from "../../scenario/mod.ts";
-import { applyToModel } from "./applyToModel.ts";
+import { applyToScenario } from "./applyToScenario.ts";
 
-Deno.test("applyToModel", () => {
+Deno.test("applyToScenario", () => {
     assertEquals(
-        applyToModel(
+        applyToScenario(
             scenarioFns.fromLines([
                 [10, 11, 12, 13, 14, 15, 16, 17],
                 [18, 19, 20, 21, 22, 23, 24, 25],
@@ -25,7 +25,7 @@ Deno.test("applyToModel", () => {
     );
 
     assertEquals(
-        applyToModel(
+        applyToScenario(
             scenarioFns.fromLines([
                 [0, 1],
                 [2, 3],
