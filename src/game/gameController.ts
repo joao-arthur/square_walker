@@ -5,6 +5,7 @@ import { linearInterpolation } from "../adapters/interpolation/mod.ts";
 import { dimensionType } from "../core/dimension.ts";
 import { gameModelType } from "./gameModel.ts";
 import { updateEntities } from "./eventLoop/updateEntities.ts";
+import { playerFns } from "./features/player/mod.ts";
 
 const FPS = 30;
 const INTERVAL = 1000 / FPS;
@@ -15,7 +16,7 @@ const model: gameModelType = {
     camera: undefined!,
     context: undefined!,
     dimensions: undefined!,
-    player: undefined,
+    player: undefined!,
     entities: undefined,
 };
 
@@ -50,10 +51,10 @@ function init(params: paramsType): void {
         height: 50,
     };
     model.player = {
-        width: 1,
-        height: 1,
         x: 1,
         y: 50,
+        width: 1,
+        height: 1,
         xSpeed: 0,
         ySpeed: 0,
         xAcelleration: 0,
@@ -61,43 +62,43 @@ function init(params: paramsType): void {
     };
 
     globalThis.addEventListener("keydown", (e) => {
+        let newCamera: cameraType;
         switch (e.code) {
             case "ArrowRight":
-                model.camera = cameraFns.moveRight(model.camera);
+                newCamera = cameraFns.moveRight(model.camera);
+                if (cameraFns.isValid(newCamera, model.scenario)) {
+                    model.camera = newCamera;
+                }
                 break;
             case "ArrowLeft":
-                model.camera = cameraFns.moveLeft(model.camera);
+                newCamera = cameraFns.moveLeft(model.camera);
+                if (cameraFns.isValid(newCamera, model.scenario)) {
+                    model.camera = newCamera;
+                }
                 break;
             case "ArrowUp":
-                model.camera = cameraFns.moveUp(model.camera);
+                newCamera = cameraFns.moveUp(model.camera);
+                if (cameraFns.isValid(newCamera, model.scenario)) {
+                    model.camera = newCamera;
+                }
                 break;
             case "ArrowDown":
-                model.camera = cameraFns.moveDown(model.camera);
+                newCamera = cameraFns.moveDown(model.camera);
+                if (cameraFns.isValid(newCamera, model.scenario)) {
+                    model.camera = newCamera;
+                }
                 break;
-            //
             case "KeyW":
-                model.player = {
-                    ...model.player,
-                    y: model.player.y + 1,
-                };
+                model.player = playerFns.moveUp(model.player);
                 break;
             case "KeyA":
-                model.player = {
-                    ...model.player,
-                    x: model.player.x - 1,
-                };
+                model.player = playerFns.moveLeft(model.player);
                 break;
             case "KeyS":
-                model.player = {
-                    ...model.player,
-                    y: model.player.y - 1,
-                };
+                model.player = playerFns.moveDown(model.player);
                 break;
             case "KeyD":
-                model.player = {
-                    ...model.player,
-                    x: model.player.x + 1,
-                };
+                model.player = playerFns.moveRight(model.player);
                 break;
         }
         switch (e.key) {
