@@ -1,6 +1,11 @@
-export enum blockType {
+export enum Block {
     AIR,
     DIRT,
     GRASS,
-    TREE,
+    STONE,
+    TREE_TRUNK,
+    TREE_LEAF,
+    STAIRS,
+    WOOD,
+    WATER,
 }

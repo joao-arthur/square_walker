@@ -1,9 +1,9 @@
-import { scenarioType } from "../../scenario/mod.ts";
-import { cameraType } from "../camera.ts";
+import { Scenario } from "../../scenario/mod.ts";
+import { Camera } from "../camera.ts";
 
 export function isValidOnScenario(
-    camera: cameraType,
-    scenario: scenarioType,
+    camera: Camera,
+    scenario: Scenario,
 ): boolean {
     if (camera.x + camera.width > scenario.length) {
         return false;

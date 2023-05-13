@@ -1,6 +1,6 @@
-import { cameraType } from "../camera.ts";
+import { Camera } from "../camera.ts";
 
-export function moveUp(camera: cameraType): cameraType {
+export function moveUp(camera: Camera): Camera {
     return {
         ...camera,
         y: camera.y + 1,

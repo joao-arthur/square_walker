@@ -1,10 +1,6 @@
 import { noiseFn } from "../../../../ports/noise.ts";
 import { interpolationFn } from "../../../../ports/interpolation.ts";
-import {
-    blockType,
-    scenarioFns,
-    scenarioType,
-} from "../../scenario/mod.ts";
+import { Block, Scenario, scenarioFns } from "../../scenario/mod.ts";
 import { terrainRange } from "../terrainRange.ts";
 import { chunckSize } from "../chunckSize.ts";
 
@@ -12,7 +8,7 @@ export function generate(
     numberOfTheChunck: number,
     noise: noiseFn,
     interpolation: interpolationFn,
-): scenarioType {
+): Scenario {
     const noiseValuePreviousChunck = noise(numberOfTheChunck);
     const noiseValueCurrentChunck = noise(numberOfTheChunck + 1);
 
@@ -32,14 +28,14 @@ export function generate(
     return scenarioFns.fromColumns(
         lineHeight.map((height) =>
             Array(scenarioFns.modelDimension.height)
-                .fill(blockType.AIR)
+                .fill(Block.AIR)
                 .fill(
-                    blockType.GRASS,
+                    Block.GRASS,
                     scenarioFns.modelDimension.height - height,
                     scenarioFns.modelDimension.height - height + 1,
                 )
                 .fill(
-                    blockType.DIRT,
+                    Block.DIRT,
                     (scenarioFns.modelDimension.height - height) + 1,
                 )
         ),

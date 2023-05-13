@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.187.0/testing/asserts.ts";
 import { fromLines } from "./fromLines/fromLines.ts";
 import { toLines } from "./toLines/toLines.ts";
 import { fromColumns } from "./fromColumns/fromColumns.ts";

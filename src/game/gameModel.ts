@@ -1,16 +1,12 @@
-import { dimensionType } from "../core/dimension.ts";
-import {
-    cameraType,
-    playerType,
-    scenarioType,
-} from "./features/mod.ts";
+import { Dimension } from "../core/dimension.ts";
+import { Camera, Player, Scenario } from "./features/mod.ts";
 
-export type gameModelType = {
+export type GameModel = {
     intervalId: number;
-    scenario: scenarioType;
-    camera: cameraType;
+    scenario: Scenario;
+    camera: Camera;
     context: CanvasRenderingContext2D;
-    dimensions: dimensionType;
-    player: playerType;
+    dimensions: Dimension;
+    player: Player;
     entities: undefined;
 };

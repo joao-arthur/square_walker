@@ -1,6 +1,6 @@
-import { cameraType } from "../camera.ts";
+import { Camera } from "../camera.ts";
 
-export function zoomIn(camera: cameraType): cameraType {
+export function zoomIn(camera: Camera): Camera {
     return {
         x: camera.x + 1,
         y: camera.y + 1,

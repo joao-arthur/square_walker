@@ -1,9 +1,9 @@
-import { numbers } from "https://deno.land/x/funis@v1.0.0/mod.ts";
-import { scenarioType } from "../scenario.ts";
+import { arr, num } from "https://deno.land/x/funis@v1.1.1/mod.ts";
+import { Scenario } from "../scenario.ts";
 
-export function fromLines(lines: scenarioType): scenarioType {
-    const iArr = numbers.range(0, lines.length - 1);
-    const jArr = numbers.range(0, lines[0].length - 1);
+export function fromLines(lines: Scenario): Scenario {
+    const iArr = num.range(0, lines.length - 1);
+    const jArr = num.range(0, arr.first(lines).length - 1);
 
     return jArr.map((j) => iArr.map((i) => lines[i][j]));
 }

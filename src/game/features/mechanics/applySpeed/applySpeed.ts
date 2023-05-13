@@ -1,11 +1,11 @@
-type speedableType = {
+type Speedable = {
     speed: number;
     position: number;
 };
 
 export function applySpeed(
-    { speed, position }: speedableType,
-): speedableType {
+    { speed, position }: Speedable,
+): Speedable {
     return {
         speed,
         position: position + speed,

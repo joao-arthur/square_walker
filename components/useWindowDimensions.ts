@@ -1,7 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
-import { dimensionType } from "../src/core/dimension.ts";
+import { Dimension } from "../src/core/dimension.ts";
 
-export function useWindowDimensions(): dimensionType {
+export function useWindowDimensions(): Dimension {
     const [width, setWidth] = useState(window.innerWidth);
     const [height, setHeight] = useState(window.innerHeight);
 

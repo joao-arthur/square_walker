@@ -1,13 +1,13 @@
-import { directionType } from "../../movable/direction.ts";
-import { playerType } from "../player.ts";
+import { Direction } from "../../movable/direction.ts";
+import { Player } from "../player.ts";
 
 export function moveDown(
-    player: playerType,
-    direction: directionType,
+    player: Player,
+    direction: Direction,
     amount: number,
-): playerType {
+): Player {
     switch (direction) {
-        case directionType.VERTICAL:
-        case directionType.HORIZONTAL:
+        case Direction.VERTICAL:
+        case Direction.HORIZONTAL:
     }
 }

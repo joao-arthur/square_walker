@@ -2,15 +2,15 @@ import { canvasRender } from "./UI/canvas/canvasRender.ts";
 import { cameraFns, chunckFns } from "./features/mod.ts";
 import { simplexNoise } from "../adapters/noise/mod.ts";
 import { linearInterpolation } from "../adapters/interpolation/mod.ts";
-import { dimensionType } from "../core/dimension.ts";
-import { gameModelType } from "./gameModel.ts";
+import { Dimension } from "../core/dimension.ts";
+import { GameModel } from "./gameModel.ts";
 import { updateEntities } from "./eventLoop/updateEntities.ts";
 import { playerFns } from "./features/player/mod.ts";
 
 const FPS = 30;
 const INTERVAL = 1000 / FPS;
 
-const model: gameModelType = {
+const model: GameModel = {
     intervalId: 0,
     scenario: undefined!,
     camera: undefined!,
@@ -20,12 +20,12 @@ const model: gameModelType = {
     entities: undefined,
 };
 
-type paramsType = {
+type Params = {
     readonly context: CanvasRenderingContext2D;
-    readonly dimensions: dimensionType;
+    readonly dimensions: Dimension;
 };
 
-function init(params: paramsType): void {
+function init(params: Params): void {
     model.context = params.context;
     model.dimensions = params.dimensions;
 
@@ -62,7 +62,7 @@ function init(params: paramsType): void {
     };
 
     globalThis.addEventListener("keydown", (e) => {
-        let newCamera: cameraType;
+        let newCamera: Camera;
         switch (e.code) {
             case "ArrowRight":
                 newCamera = cameraFns.moveRight(model.camera);

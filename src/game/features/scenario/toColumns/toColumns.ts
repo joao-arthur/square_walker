@@ -1,7 +1,7 @@
-import { scenarioType } from "../scenario.ts";
+import { Scenario } from "../scenario.ts";
 
 export function toColumns(
-    scenario: scenarioType,
-): scenarioType {
+    scenario: Scenario,
+): Scenario {
     return [...scenario];
 }

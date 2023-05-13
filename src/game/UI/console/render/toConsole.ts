@@ -1,14 +1,24 @@
-import { blockType } from "../../../features/mod.ts";
+import { Block } from "../../../features/mod.ts";
 
-export function toConsole(blockValue: blockType): string {
-    switch (blockValue) {
-        case blockType.AIR:
+export function toConsole(block: Block): string {
+    switch (block) {
+        case Block.AIR:
             return "  ";
-        case blockType.DIRT:
+        case Block.DIRT:
             return "🟫";
-        case blockType.GRASS:
+        case Block.GRASS:
             return "🟩";
-        case blockType.TREE:
+        case Block.STONE:
+            return "⬛";
+        case Block.WATER:
+            return "🟦";
+        case Block.WOOD:
+            return "🟫";
+        case Block.TREE_TRUNK:
             return "🌳";
+        case Block.TREE_LEAF:
+            return "";
+        case Block.STAIRS:
+            return "";
     }
 }

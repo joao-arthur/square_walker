@@ -1,2 +1,2 @@
-export function updateEntities(model: gameModelType): void {
+export function updateEntities(model: GameModel): void {
 }

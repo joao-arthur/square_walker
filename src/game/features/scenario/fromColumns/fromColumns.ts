@@ -1,5 +1,5 @@
-import { scenarioType } from "../scenario.ts";
+import { Scenario } from "../scenario.ts";
 
-export function fromColumns(columns: scenarioType): scenarioType {
+export function fromColumns(columns: Scenario): Scenario {
     return [...columns];
 }

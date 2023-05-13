@@ -1,28 +1,28 @@
-import { assertEquals } from "https://deno.land/std@0.171.0/testing/asserts.ts";
-import { blockType, scenarioFns } from "../../scenario/mod.ts";
+import { assertEquals } from "https://deno.land/std@0.187.0/testing/asserts.ts";
+import { Block, scenarioFns } from "../../scenario/mod.ts";
 import { addOnStart } from "./addOnStart.ts";
 
 Deno.test("addOnStart", () => {
     assertEquals(
         addOnStart(
             scenarioFns.fromLines([
-                [blockType.AIR, blockType.AIR],
-                [blockType.AIR, blockType.GRASS],
-                [blockType.GRASS, blockType.DIRT],
-                [blockType.DIRT, blockType.DIRT],
+                [Block.AIR, Block.AIR],
+                [Block.AIR, Block.GRASS],
+                [Block.GRASS, Block.DIRT],
+                [Block.DIRT, Block.DIRT],
             ]),
             scenarioFns.fromLines([
-                [blockType.GRASS],
-                [blockType.DIRT],
-                [blockType.DIRT],
-                [blockType.DIRT],
+                [Block.GRASS],
+                [Block.DIRT],
+                [Block.DIRT],
+                [Block.DIRT],
             ]),
         ),
         scenarioFns.fromLines([
-            [blockType.GRASS, blockType.AIR, blockType.AIR],
-            [blockType.DIRT, blockType.AIR, blockType.GRASS],
-            [blockType.DIRT, blockType.GRASS, blockType.DIRT],
-            [blockType.DIRT, blockType.DIRT, blockType.DIRT],
+            [Block.GRASS, Block.AIR, Block.AIR],
+            [Block.DIRT, Block.AIR, Block.GRASS],
+            [Block.DIRT, Block.GRASS, Block.DIRT],
+            [Block.DIRT, Block.DIRT, Block.DIRT],
         ]),
     );
 });

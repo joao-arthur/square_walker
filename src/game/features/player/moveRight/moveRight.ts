@@ -1,6 +1,6 @@
-import { playerType } from "../player.ts";
+import { Player } from "../player.ts";
 
-export function moveRight(player: playerType): playerType {
+export function moveRight(player: Player): Player {
     return {
         ...player,
         x: player.x + 1,

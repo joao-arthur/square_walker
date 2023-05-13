@@ -1,4 +1,4 @@
-export type { cameraType } from "./camera.ts";
+export type { Camera } from "./camera.ts";
 import { moveLeft } from "./moveLeft/mod.ts";
 import { moveRight } from "./moveRight/mod.ts";
 import { moveUp } from "./moveUp/mod.ts";

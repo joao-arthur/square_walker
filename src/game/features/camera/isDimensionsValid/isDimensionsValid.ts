@@ -1,7 +1,7 @@
-import { cameraType } from "../camera.ts";
+import { Camera } from "../camera.ts";
 
 export function isDimensionsValid(
-    camera: cameraType,
+    camera: Camera,
 ): boolean {
     return (
         camera.height >= 1 &&

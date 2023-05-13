@@ -1,3 +1,3 @@
-import { blockType } from "./block.ts";
+import { Block } from "./block.ts";
 
-export type scenarioType = readonly (readonly blockType[])[];
+export type Scenario = readonly (readonly Block[])[];

@@ -1,11 +1,11 @@
-import { numbers } from "https://deno.land/x/funis@v1.0.0/mod.ts";
+import { num } from "https://deno.land/x/funis@v1.1.1/mod.ts";
 
 export function linearInterpolation(
     numA: number,
     numB: number,
     length: number,
 ): readonly number[] {
-    return numbers.range(
+    return num.range(
         numA,
         numB,
         Number(

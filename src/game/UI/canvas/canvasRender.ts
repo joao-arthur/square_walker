@@ -1,7 +1,7 @@
-import { blockType, cameraFns } from "../../features/mod.ts";
-import { gameModelType } from "../../gameModel.ts";
+import { Block, cameraFns } from "../../features/mod.ts";
+import { GameModel } from "../../gameModel.ts";
 
-export function canvasRender(model: gameModelType): void {
+export function canvasRender(model: GameModel): void {
     const modelInCamera = cameraFns.applyToScenario(
         model.scenario,
         model.camera,
@@ -13,13 +13,13 @@ export function canvasRender(model: gameModelType): void {
     modelInCamera.forEach((column, columnIndex) => {
         column.forEach((block, lineIndex) => {
             switch (block) {
-                case blockType.AIR:
+                case Block.AIR:
                     model.context.fillStyle = "#ebf7ff";
                     break;
-                case blockType.GRASS:
+                case Block.GRASS:
                     model.context.fillStyle = "#126b23";
                     break;
-                case blockType.DIRT:
+                case Block.DIRT:
                     model.context.fillStyle = "#453c01";
                     break;
             }

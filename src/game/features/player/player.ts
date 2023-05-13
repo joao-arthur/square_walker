@@ -1,4 +1,4 @@
-export type playerType = {
+export type Player = {
     readonly x: number;
     readonly y: number;
     readonly width: number;
