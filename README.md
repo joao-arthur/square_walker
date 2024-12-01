@@ -1,4 +1,4 @@
-# SquareWalker
+# square_walker
 
 A 2d random generated scenario in blocks.
 
