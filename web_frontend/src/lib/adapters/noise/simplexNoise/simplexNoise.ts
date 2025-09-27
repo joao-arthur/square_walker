@@ -1,6 +1,6 @@
-import { simplexNoise2D } from "https://deno.land/x/noise/mod.ts";
+import { createNoise2D } from "simplex-noise";
 
-const simplexNoiseObj = simplexNoise2D();
+const simplexNoiseObj = createNoise2D();
 
 export function simplexNoise(
     x: number,

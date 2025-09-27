@@ -1,4 +1,5 @@
-import { Scenario, scenarioFns } from "../../scenario/mod.ts";
+import type { Scenario } from "../../scenario/mod.ts";
+import { scenarioFns } from "../../scenario/mod.ts";
 
 export function addOnStart(
     scenario: Scenario,

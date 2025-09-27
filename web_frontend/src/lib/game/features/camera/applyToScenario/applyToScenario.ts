@@ -1,6 +1,7 @@
-import { std } from "https://deno.land/x/funis@v1.1.1/mod.ts";
-import { Scenario, scenarioFns } from "../../scenario/mod.ts";
-import { Camera } from "../camera.ts";
+import type { Scenario } from "../../scenario/mod.ts";
+import type { Camera } from "../camera.ts";
+import { std } from "funis";
+import { scenarioFns } from "../../scenario/mod.ts";
 
 export function applyToScenario(
     scenario: Scenario,

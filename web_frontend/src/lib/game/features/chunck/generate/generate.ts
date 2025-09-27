@@ -1,6 +1,7 @@
-import { noiseFn } from "../../../../ports/noise.ts";
-import { interpolationFn } from "../../../../ports/interpolation.ts";
-import { Block, Scenario, scenarioFns } from "../../scenario/mod.ts";
+import type { noiseFn } from "../../../../ports/noise.ts";
+import type { interpolationFn } from "../../../../ports/interpolation.ts";
+import type { Scenario } from "../../scenario/mod.ts";
+import { Block, scenarioFns } from "../../scenario/mod.ts";
 import { terrainRange } from "../terrainRange.ts";
 import { chunckSize } from "../chunckSize.ts";
 

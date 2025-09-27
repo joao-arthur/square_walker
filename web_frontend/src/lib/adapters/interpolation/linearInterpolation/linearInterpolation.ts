@@ -1,4 +1,4 @@
-import { num } from "https://deno.land/x/funis@v1.1.1/mod.ts";
+import { num } from "funis";
 
 export function linearInterpolation(
     numA: number,
@@ -11,9 +11,7 @@ export function linearInterpolation(
         Number(
             (
                 (
-                    numA > numB
-                        ? -Math.abs(numA - numB)
-                        : Math.abs(numA - numB)
+                    numA > numB ? -Math.abs(numA - numB) : Math.abs(numA - numB)
                 ) /
                 length
             ).toFixed(4),

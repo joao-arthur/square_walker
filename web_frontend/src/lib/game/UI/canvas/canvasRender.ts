@@ -1,5 +1,5 @@
+import type { GameModel } from "../../gameModel.ts";
 import { Block, cameraFns } from "../../features/mod.ts";
-import { GameModel } from "../../gameModel.ts";
 
 export function canvasRender(model: GameModel): void {
     const modelInCamera = cameraFns.applyToScenario(

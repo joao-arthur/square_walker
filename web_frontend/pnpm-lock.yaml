@@ -17,6 +17,12 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: 6.2.1
         version: 6.2.1(svelte@5.39.6)(vite@7.1.7)
+      funis:
+        specifier: 1.2.0
+        version: 1.2.0
+      simplex-noise:
+        specifier: 4.0.3
+        version: 4.0.3
       svelte:
         specifier: 5.39.6
         version: 5.39.6
@@ -430,6 +436,10 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
+  funis@1.2.0:
+    resolution: {integrity: sha512-aGsKbEay5zkcVfUWzvpJanqCohkVSEG5cNaSzQUrODAEtaWZStOsl3h9vUMZUw2z8b3agQu/l4ueGLaIX2pFsw==}
+    engines: {node: '>=18.7.0'}
+
   is-reference@3.0.3:
     resolution: {integrity: sha512-ixkJoqQvAP88E6wLydLGGqCJsrFUnqoH6HnaczB8XmDH1oaWU+xxdptvikTgaEhtZ53Ky6YXiBuUI2WXLMCwjw==}
 
@@ -485,6 +495,9 @@ packages:
 
   set-cookie-parser@2.7.1:
     resolution: {integrity: sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==}
+
+  simplex-noise@4.0.3:
+    resolution: {integrity: sha512-qSE2I4AngLQG7BXqoZj51jokT4WUXe8mOBrvfOXpci8+6Yu44+/dD5zqDpOx3Ux792eamTd2lLcI8jqFntk/lg==}
 
   sirv@3.0.2:
     resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
@@ -855,6 +868,8 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
+  funis@1.2.0: {}
+
   is-reference@3.0.3:
     dependencies:
       '@types/estree': 1.0.8
@@ -920,6 +935,8 @@ snapshots:
       mri: 1.2.0
 
   set-cookie-parser@2.7.1: {}
+
+  simplex-noise@4.0.3: {}
 
   sirv@3.0.2:
     dependencies:

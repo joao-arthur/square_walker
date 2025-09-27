@@ -1,5 +1,5 @@
-import { Scenario } from "../../scenario/mod.ts";
-import { Camera } from "../camera.ts";
+import type { Scenario } from "../../scenario/mod.ts";
+import type { Camera } from "../camera.ts";
 
 export function isValidOnScenario(
     camera: Camera,

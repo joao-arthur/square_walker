@@ -1,9 +1,9 @@
+import type { Dimension } from "../core/dimension.ts";
+import type { GameModel } from "./gameModel.ts";
 import { canvasRender } from "./UI/canvas/canvasRender.ts";
 import { cameraFns, chunckFns } from "./features/mod.ts";
 import { simplexNoise } from "../adapters/noise/mod.ts";
 import { linearInterpolation } from "../adapters/interpolation/mod.ts";
-import { Dimension } from "../core/dimension.ts";
-import { GameModel } from "./gameModel.ts";
 import { updateEntities } from "./eventLoop/updateEntities.ts";
 import { playerFns } from "./features/player/mod.ts";
 

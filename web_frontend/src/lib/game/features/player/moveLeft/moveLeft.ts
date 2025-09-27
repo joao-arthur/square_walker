@@ -1,4 +1,4 @@
-import { Player } from "../player.ts";
+import type { Player } from "../player.ts";
 
 export function moveLeft(player: Player): Player {
     return {

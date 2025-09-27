@@ -1,4 +1,4 @@
-import { Camera } from "../camera.ts";
+import type { Camera } from "../camera.ts";
 
 export function isDimensionsValid(
     camera: Camera,

@@ -8,8 +8,6 @@
 
     let canvas: HTMLCanvasElement;
 
-    const dimension = Math.min(innerHeight, innerWidth);
-
     onMount(() => {
         if (!initiated) {
             initiated = true;
@@ -20,13 +18,12 @@
             gameController.init({
                 context,
                 dimensions: {
-                    width: dimension,
-                    height: dimension,
+                    width: Math.min(innerHeight, innerWidth),
+                    height: Math.min(innerHeight, innerWidth),
                 },
             });
             return () => gameController.close();
         }
-
     });
 </script>
 
@@ -48,8 +45,11 @@
 <main>
     <canvas
         bind:this={canvas}
-        width={dimension}
-        height={dimension} 
-        style={`width: ${Math.min(innerHeight, innerWidth)}px; height: ${Math.min(innerHeight, innerWidth)}px;`}
-     />
+        width={Math.min(innerHeight, innerWidth)}
+        height={Math.min(innerHeight, innerWidth)}
+        style={`width: ${Math.min(innerHeight, innerWidth)}px; height: ${
+            Math.min(innerHeight, innerWidth)
+        }px;`}
+    >
+    </canvas>
 </main>

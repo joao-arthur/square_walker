@@ -1,5 +1,5 @@
+import type { Player } from "../player.ts";
 import { Direction } from "../../movable/direction.ts";
-import { Player } from "../player.ts";
 
 export function moveDown(
     player: Player,

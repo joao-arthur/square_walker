@@ -1,4 +1,5 @@
-import { Scenario, scenarioFns } from "../../../features/mod.ts";
+import type { Scenario } from "../../../features/mod.ts";
+import { scenarioFns } from "../../../features/mod.ts";
 import { toConsole } from "./toConsole.ts";
 
 export function modelToConsole(scenario: Scenario): string[] {

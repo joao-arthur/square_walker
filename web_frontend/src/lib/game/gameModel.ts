@@ -1,5 +1,5 @@
-import { Dimension } from "../core/dimension.ts";
-import { Camera, Player, Scenario } from "./features/mod.ts";
+import type { Dimension } from "../core/dimension.ts";
+import type { Camera, Player, Scenario } from "./features/mod.ts";
 
 export type GameModel = {
     intervalId: number;
