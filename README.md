@@ -31,9 +31,3 @@ A 2d random generated scenario in blocks.
 
 - ✅ Canvas
 - 🚧 OpenGL
-
-## Run it
-
-```
-deno task start
-```
