@@ -1,4 +1,3 @@
-export type { Player } from "./player.ts";
 import { moveLeft } from "./moveLeft/mod.ts";
 import { moveRight } from "./moveRight/mod.ts";
 import { moveUp } from "./moveUp/mod.ts";
